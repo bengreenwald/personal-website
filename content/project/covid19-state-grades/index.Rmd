@@ -1,0 +1,16 @@
+---
+title: "COVID-19 State Grades Dashboard"
+subtitle: "Developed during Broadstreet's COVID-19 Data Project internship."
+summary: I designed an interactive dashboard to visualize how well U.S. states report their COVID-19 data.  
+date: "2021-02-09"
+tags: [design]
+image:
+  caption: "[Image designed by Mihaela Kracun](https://www.linkedin.com/in/mihaela-b738511a5/)"
+  focal_point: center
+draft: false
+output: html_document
+---
+
+Description of my state grades project experience and how I contributed. 
+
+[Explore the dashboard](https://www.broadstreet.io/state-grades/).

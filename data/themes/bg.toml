@@ -1,0 +1,19 @@
+# Theme metadata
+name = "bg"
+
+# Is theme light or dark?
+light = false
+
+# Primary
+primary = "#71bc78"
+
+# Menu
+menu_primary = "#222222"
+menu_text = "#d9d9d9"
+menu_text_active = "#71bc78"
+menu_title = "#d9d9d9"
+
+# Home sections
+background = "#222222"
+home_section_odd = "#222222"
+home_section_even = "#222222"

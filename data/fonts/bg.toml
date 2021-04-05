@@ -1,0 +1,12 @@
+# Font style metadata
+name = "bg"
+
+# Optional Google font URL
+google_fonts = "Fira+Code|Roboto:400,400i,700,700i|Spectral:400,400i,700,700i"
+
+# Font families
+heading_font = "Spectral"
+body_font = "Roboto"
+nav_font = "Roboto"
+mono_font = "Fira Code"
+
