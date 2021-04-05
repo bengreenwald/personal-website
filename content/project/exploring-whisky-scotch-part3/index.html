@@ -1,0 +1,158 @@
+---
+title: "Exploring Scotch Whisky: Part 3"
+subtitle: "Mapping Distilleries & Regions"
+summary: Mapping `distilleries` across Scotland to discover what makes each `region`'s scotch special.
+date: "2021-04-17"
+tags: [r, analysis, tableau]
+image:
+  caption: "[Photo by BK on Unsplash](https://unsplash.com/photos/3kKFEe1nhGc)"
+  focal_point: center
+draft: true
+output: html_document
+---
+
+
+
+<div id="to-do" class="section level1">
+<h1>TO-DO</h1>
+<ul>
+<li>Add brief intro text for Part 3 above the glimpse.</li>
+<li>Add additional guiding questions.</li>
+<li>Complete/edit Distillery section.</li>
+<li>Complete/edit Region section.</li>
+<li>Send data to Tableau, create Tableau interactive map.</li>
+<li>Write Tableau section</li>
+<li>Write Conclusions.</li>
+<li>Write Next Steps.</li>
+<li>add images, adjust sizing/orientation</li>
+<li>add notated code throughout</li>
+<li>proofread (grammar, links)</li>
+</ul>
+<hr />
+<div id="part-3-mapping-distilleries-regions" class="section level2">
+<h2>Part 3: Mapping Distilleries &amp; Regions</h2>
+<p>Welcome to the next installment of <strong>Exploring Whisky: The Journey to My Next Bottle of Scotch</strong>, a multi-part project in which I leverage data to share fun facts about whisky as I continue my hopeful search to discover delicious scotch.</p>
+<p>Previously in <a href="https://www.google.com/">Part 1</a>, we built our dataset from scratch by scraping scotch whisky reviews, prices, brands, regional locations, and more from <a href="https://www.whiskyadvocate.com/ratings-and-reviews/">Whisky Advocate</a>, Wikipedia (<a href="https://en.wikipedia.org/wiki/List_of_whisky_distilleries_in_Scotland">1</a>, <a href="https://en.wikipedia.org/wiki/Category:Distilleries_in_Scotland">2</a>, <a href="https://en.wikipedia.org/wiki/Category:Blended_Scotch_whisky">3</a>), and <a href="https://www.whisky.com/whisky-database/database.html">whisky.com</a>. Then in <a href="https://www.google.com/">Part 2</a>, we explored the distributions of and relationships between variables including whisky <code>type</code>, <code>age</code>, <code>ABV</code>, <code>price</code>, and rating <code>points</code>.</p>
+<p>Next, <a href="https://github.com/bengreenwald/whisky/blob/main/analysis/scotch-analysis-part3.R">Part 3</a>…short description about brands, regions, mapping.</p>
+</div>
+<div id="project-goals" class="section level2">
+<h2>Project Goals</h2>
+<p>As a reminder, the overarching goals of this mutli-part project are threefold:</p>
+<ul>
+<li>To augment my learning about whisky brands, regions, flavors, and options</li>
+<li>To understand the breadth, depth, and quirks of the scotch whisky industry</li>
+<li>To leverage data to determine which whiskies I ought to try myself</li>
+</ul>
+</div>
+<div id="mapping-distilleries-regions" class="section level2">
+<h2>Mapping Distilleries &amp; Regions</h2>
+<p>INTRO TEXT FOR PART 3</p>
+<p><strong>{glimpse_data}</strong></p>
+<div id="guiding-questions" class="section level3">
+<h3>Guiding Questions</h3>
+<ul>
+<li>Which brands release the most expensive and/or highly-rated whiskies?</li>
+<li>Which brands are the most profilic?</li>
+<li>Which regions produce the most highly-rated whiskies?</li>
+<li>ADD QUESTIONS</li>
+</ul>
+</div>
+<div id="distilleries-brands" class="section level3">
+<h3>Distilleries &amp; Brands</h3>
+<p><strong>Which brands release the most expensive and/or highly-rated whiskies?</strong>
+<strong>Which brands are the most profilic?</strong></p>
+<p>After fuzzy-joining scotch ratings data with our collection of distillery names, I successfully matched 128 different distilleries and brands across 6 regions in Scotland to over 2,000 different scotch releases.</p>
+<p>At first, I calculated the average <code>price</code> and average <code>points</code>, as well as the number of releases, for each brand. However, I quickly learned that scotch prices are <em>heavily skewed</em> and completely out of control; several scotch prices exceeded $10,000! The median is a more stable descriptive statistic compared with the mean and is more resistant to extremely skewed data. Therefore, I opted for the median price. I also found that Ladyburn’s lone release in the data was priced at a hefty $1,750 (at least 3x larger than the next higher median price). With that in mind, I omitted Ladyburn here to create a more legible plot.</p>
+<p>Rating points proved much less unruly and were safely averaged here. As a reminder, Whisky Advocate uses a tiered, 100-point <a href="https://www.whiskyadvocate.com/ratings-and-reviews/">rating scale</a> as described below:</p>
+<ul>
+<li>95-100 points — <strong>Classic</strong>: <em>a great whisky</em></li>
+<li>90-94 points — <strong>Outstanding</strong>: <em>a whisky of superior character and style</em></li>
+<li>85-89 points — <strong>Very Good</strong>: <em>a whisky with special qualities</em></li>
+<li>80-84 points — <strong>Good</strong>: <em>a solid, well-made whisky</em></li>
+<li>75-79 points - <strong>Mediocre</strong>: <em>a drinkable whisky that may have minor flaws</em></li>
+<li>50-74 points - <strong>Not Recommended</strong></li>
+</ul>
+<p><strong>{brand_plotly}</strong></p>
+<p>Observing distilleries across all regions together, most brands cluster together between a median price of $50-200 and an average rating points of 84-90, indicating that there are plenty of affordable “Very Good” scotches out there to explore. Some brands notably outside of the cluster include:</p>
+<ul>
+<li><strong>Knockando</strong>, a Speyside brand with only 2 releases, but a dreadfully low average rating</li>
+<li><strong>Balvenie</strong>, a highly prolific Speyside distillery with expensive, well-rated scotch</li>
+<li><strong>Glenfarclas</strong>, a pricey Speyside brand with over 30 releases and a median price over $500</li>
+<li><strong>Brora</strong>, a highly well-regarded premium Highland brand with a stunning average rating of 92.7 points across 15 releases</li>
+<li><strong>Ailsa Bay</strong>, a fascinating new Lowland distillery with only one experimental, cheap, and extremely well-rated scotch</li>
+</ul>
+<p>Further can be gleaned from isolating particular regions across Scotland. The plot is dominated by entries from the Speyside and Highland regions, from where Glenfiddich and Glengoyne (respectively) originate. Each region is responsible for the majority of the aforementioned cluster, though each also include brands with increasing prices and ratings. Filtering out other brands makes each region’s most prolific, reasonably-priced brands (Glenlivet, Macallan, Glenmorangie) easier to locate. Generally, Speyside distilleries seem to skew a bit more expensive than Highland brands.</p>
+<p>The remaining four regions (Islay, Island, Lowland, and Campbeltown) only have a few entries each. Islay is a remarkably consistent region with 8 distilleries includes, each of which have at least 30 releases, median prices between $90-$130, and average ratings between 86-91 points. There may not be much land in the Islay region known for its peaty, smoky whiskies, but every distillery is highly prolific and very well-regarded, including Lagavulin (the scotch famously enjoyed by Parks &amp; Recreation’s <a href="https://www.youtube.com/watch?v=frbsZ8TGsX8">Ron Swanson</a> and real life’s <a href="https://www.youtube.com/watch?v=jNOye7_9qag">Nick Offerman</a>, who happen to be the same person.)</p>
+<br>
+<div class="figure" style="text-align: center">
+<p><img src="../images/ron-swanson-scotch.gif" width="60%" /></p>
+</div>
+<p><br><br></p>
+<p>The most prolific brands in the Lowlands region such as Auchentoshan and Bladnoch are tightly clustered around 85 average points and a $100 median price, while other boutique brands such as Daftmill, Ailsa Bay, and Leven have 1-2 releases each at the extremes of price and rating. In the Islands region, Abhainn Dearg stands out from the pack with one whisky release that is far more expensive ($239) than its rating of 81 would suggest. Lastly, the once bustling scotch region of Campbeltown only has three remaining brands to carry forward its history after many distilleries were shuttered nearly a century ago after decades of mass-produced, subpar scotch peddled by distillers in the area willing to cut corners.</p>
+<p>NEED TO COMMENT ON THE DISTILLERIES WITH NO REGION AVAILABLE - these brands are either primarily blended or independent bottlers
+they don’t really have distilleries, per se - they seem to have shops and visitor centers, but they are usually distilling at someone else’s - how to handle these moving forward????
+* Johnnie Walker @ Cardhu
+* Dewar’s @ Aberfeldy
+* Chivas Regal @ Strathisla
+* Famous Grouse @ Glenturret
+* Cutty Sark @ Glenrothes
+* Royal Salute @ Strathisla (brand of Chivas Regal)
+* Adelphi, Ballantine’s, Gordon &amp; MacPhail independent bottlers
+* Glenury single malt that close in the 1980s closed
+* Haig is now Cameron Bridge, and they do Single Grain
+* William Grant &amp; Sons owns Glenfiddich, Balvenie, others - and House of Hazelwood is a sub-brand
+* Black Bottle + Buchanan’s are just blended brands, can’t find out much
+.na(distillery))</p>
+<p>Would recommend looking into some of the most common brands here as well - who are they?
+wemyss, trader joe’s, shieldaig, why are they not on whisky.com</p>
+</div>
+<div id="regions" class="section level3">
+<h3>Regions</h3>
+<p><strong>Which regions produce the most highly-rated whiskies?</strong></p>
+<p><a href="https://www.whiskyadvocate.com/scotch-regions-list/">Scotch whisky regions are not exactly standardized</a> or commonly recognized across the industry, but there are generally considered to be six different regions, each of which boasts a distinct whisky style and sensibility: Speyside, Highland, Lowland, Islay, Islands, and Campbeltown. In these data where regional information was available, over 80% of the whisky releases come from Speyside, Highland, and Islay distilleries.</p>
+<p><strong>{region_violin}</strong></p>
+<ul>
+<li>highland with the very long tail</li>
+<li>speyside and islay leading the pack (not surprising…why)?</li>
+<li>followed by island, highland, and campbeltown</li>
+<li>lowland is clearly the lowest</li>
+</ul>
+</div>
+<div id="mapping-section" class="section level3">
+<h3>Mapping Section</h3>
+<p>get data ready for tableau, create it, link to it.
+add analysis.</p>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>Add conclusion.</p>
+</div>
+<div id="next-steps" class="section level2">
+<h2>Next Steps</h2>
+<p>Add next steps.</p>
+</div>
+<div id="resources" class="section level2">
+<h2>Resources</h2>
+<p><a href="https://kb.tableau.com/articles/howto/plotting-geographic-data-using-custom-longitude-and-latitude" class="uri">https://kb.tableau.com/articles/howto/plotting-geographic-data-using-custom-longitude-and-latitude</a></p>
+<p>Fuzzy join with a partial string match.
+<a href="https://stackoverflow.com/questions/32914357/dplyr-inner-join-with-a-partial-string-match" class="uri">https://stackoverflow.com/questions/32914357/dplyr-inner-join-with-a-partial-string-match</a>
+can map, but can also see about distillery averages (points, price, description text) as it relates to flavor as well</p>
+<p><a href="https://blog.exploratory.io/making-maps-for-uk-countries-and-local-authorities-areas-in-r-b7d222939597" class="uri">https://blog.exploratory.io/making-maps-for-uk-countries-and-local-authorities-areas-in-r-b7d222939597</a>
+shapefile - <a href="https://borders.ukdataservice.ac.uk/easy_download.html" class="uri">https://borders.ukdataservice.ac.uk/easy_download.html</a>
+shapefile: <a href="https://borders.ukdataservice.ac.uk/bds.html" class="uri">https://borders.ukdataservice.ac.uk/bds.html</a>
+<a href="https://davidhen.github.io/clean_shapefile_scotland_LA/clean_shape.html" class="uri">https://davidhen.github.io/clean_shapefile_scotland_LA/clean_shape.html</a></p>
+<p>source data: <a href="https://www.kaggle.com/koki25ando/scotch-whisky-dataset" class="uri">https://www.kaggle.com/koki25ando/scotch-whisky-dataset</a></p>
+<p><a href="https://outreach.mathstat.strath.ac.uk/outreach/nessie/nessie_whisky.html" class="uri">https://outreach.mathstat.strath.ac.uk/outreach/nessie/nessie_whisky.html</a>
+<a href="https://blog.revolutionanalytics.com/2013/12/k-means-clustering-86-single-malt-scotch-whiskies.html" class="uri">https://blog.revolutionanalytics.com/2013/12/k-means-clustering-86-single-malt-scotch-whiskies.html</a></p>
+<p><a href="https://whiskyanalysis.com/index.php/database/" class="uri">https://whiskyanalysis.com/index.php/database/</a>
+<a href="https://whiskyanalysis.com/index.php/methodology-introduction/methodology-flavour-comparison/" class="uri">https://whiskyanalysis.com/index.php/methodology-introduction/methodology-flavour-comparison/</a></p>
+<p><a href="https://rss.onlinelibrary.wiley.com/doi/epdf/10.1111/j.1740-9713.2009.00337.x" class="uri">https://rss.onlinelibrary.wiley.com/doi/epdf/10.1111/j.1740-9713.2009.00337.x</a></p>
+<p>-could we extract brands, then pair with the flavor notes? use fuzzyjoin:
+EXAMPLE ANALYSIS: <a href="https://whiskyanalysis.com/index.php/methodology-introduction/methodology-flavour-comparison/" class="uri">https://whiskyanalysis.com/index.php/methodology-introduction/methodology-flavour-comparison/</a>
+<a href="https://www.r-bloggers.com/2014/01/where-the-whisky-flavor-profile-data-came-from/" class="uri">https://www.r-bloggers.com/2014/01/where-the-whisky-flavor-profile-data-came-from/</a>
+<a href="https://www.r-bloggers.com/2013/12/k-means-clustering-86-single-malt-scotch-whiskies/" class="uri">https://www.r-bloggers.com/2013/12/k-means-clustering-86-single-malt-scotch-whiskies/</a>
+<a href="https://www.r-bloggers.com/2014/01/mapping-the-taste-profile-of-scottish-whishkeys/" class="uri">https://www.r-bloggers.com/2014/01/mapping-the-taste-profile-of-scottish-whishkeys/</a>
+<a href="https://towardsdatascience.com/recommending-scotch-whisky-ea440c2eb289" class="uri">https://towardsdatascience.com/recommending-scotch-whisky-ea440c2eb289</a></p>
+</div>
+</div>
