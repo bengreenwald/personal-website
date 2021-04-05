@@ -5,7 +5,7 @@ theme: "starter-academic"
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Ben Greenwald # Website name
-baseurl: "" # Website URL
+baseurl: "https://bengreenwald.io/" # Website URL
 copyright: '© 2021 Ben Greenwald.' # Footer text, e.g. '© {year} Me'
 
 ############################
