@@ -16,7 +16,10 @@ highlight_name: true
 interests:
 - Data analysis
 - Data visualization
+- UI & UX design
+- Machine learning
 - Sports analytics
+- Data-driven storytelling
 organizations:
 - name: Catalyst @ Penn GSE
   url: https://www.gse.upenn.edu/catalyst
