@@ -14,7 +14,7 @@ main:
     url: '/projects'
     weight: 30
   - name: Resume
-    url: 'media/demo_resume.pdf'
+    url: 'media/ben-greenwald-resume.pdf'
     weight: 40
 #  - name: Talks
 #    url: '#talks'

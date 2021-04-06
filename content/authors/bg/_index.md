@@ -38,6 +38,6 @@ superuser: true
 title: Ben Greenwald
 ---
 
-Add bio here (about 2 short paragraphs).
+Add bio here (1-2 sentences).
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/ben-greenwald-resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
