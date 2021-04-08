@@ -40,4 +40,4 @@ title: Ben Greenwald
 
 I am an analytical and design-oriented storyteller passionate about diffusing knowledge and creating impact through data-driven stories. I love to explore, analyze, and visualize data to make sense of the world and share insights that inspire positive change and a curiosity to learn. Currently, I work for Catalyst @ Penn GSE, a center for global innovation at the University of Pennsylvania where I coordinate programs for innovators who are shaping the future of education.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/ben-greenwald-resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/ben-greenwald-resume.pdf" "newtab" >}}résumé{{< /staticref >}}.
