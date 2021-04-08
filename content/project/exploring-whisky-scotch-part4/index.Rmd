@@ -2,7 +2,7 @@
 title: "Exploring Scotch Whisky: Part 4"
 subtitle: "Review Text Analysis"
 summary: What can we learn from Whisky Advocate's experts? We can parse review `descriptions` for flavors and themes. 
-date: "2021-06-01"
+date: ""
 tags: [r, analysis]
 image:
   caption: "[Photo by Robin Canfield on Unsplash](https://unsplash.com/photos/C8qNdlqlS6k)"

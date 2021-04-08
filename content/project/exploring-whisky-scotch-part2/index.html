@@ -1,14 +1,13 @@
 ---
 title: "Exploring Scotch Whisky: Part 2"
 subtitle: "Exploratory Data Analysis"
-summary: Using our data scraped from Part 1, next let's explore scotch `type`, `age`, `ABV`, `price`, and `points`.
+summary: With our data scraped, next let's explore scotch `type`, `age`, `ABV`, `price`, and `points`.
 date: "2021-03-25"
 tags: [r, analysis]
 image:
   caption: "[Photo by Martin Kníže on Unsplash](https://unsplash.com/photos/DQpHtE5WY-U)"
   focal_point: center
 draft: false
-exclude_jquery: true
 output: 
   blogdown: html_page
 ---
@@ -16,7 +15,7 @@ output:
 
 
 <p>Welcome to the next installment of <strong>Exploring Whisky: The Journey to My Next Bottle of Scotch</strong>, a multi-part project in which I leverage data to share fun facts about whisky as I continue my hopeful search to discover delicious scotch.</p>
-<p>Previously in <a href="https://www.google.com/">Part 1</a>, we built our dataset by scraping scotch whisky reviews, prices, brands, regional locations, and more from <a href="https://www.whiskyadvocate.com/ratings-and-reviews/">Whisky Advocate</a>, Wikipedia (<a href="https://en.wikipedia.org/wiki/List_of_whisky_distilleries_in_Scotland">1</a>, <a href="https://en.wikipedia.org/wiki/Category:Distilleries_in_Scotland">2</a>, <a href="https://en.wikipedia.org/wiki/Category:Blended_Scotch_whisky">3</a>), and <a href="https://www.whisky.com/whisky-database/database.html">whisky.com</a>.</p>
+<p>Previously in <a href="https://bengreenwald.io/project/exploring-whisky-scotch-part1/">Part 1</a>, we built our dataset by scraping scotch whisky reviews, prices, brands, regional locations, and more from <a href="https://www.whiskyadvocate.com/ratings-and-reviews/">Whisky Advocate</a>, Wikipedia (<a href="https://en.wikipedia.org/wiki/List_of_whisky_distilleries_in_Scotland">1</a>, <a href="https://en.wikipedia.org/wiki/Category:Distilleries_in_Scotland">2</a>, <a href="https://en.wikipedia.org/wiki/Category:Blended_Scotch_whisky">3</a>), and <a href="https://www.whisky.com/whisky-database/database.html">whisky.com</a>.</p>
 <p>With our data ready to go, it’s time to dig in! <a href="https://github.com/bengreenwald/whisky/blob/main/analysis/scotch-analysis-part2.R">Part 2</a> covers exploratory data analysis to better understand distributions of and relationships between several variables, starting with a few gathered from Whisky Advocate.</p>
 <div id="project-goals" class="section level1">
 <h1>Project Goals</h1>
@@ -29,7 +28,7 @@ output:
 </div>
 <div id="exploratory-data-analysis" class="section level1">
 <h1>Exploratory Data Analysis</h1>
-<p>With our data scraped, reshaped, cleaned, and saved, we can begin to explore these data to better understand univariate distributions and whether certain variables may be related. In Part I, we’ll focus on <code>type</code>, <code>age</code>, <code>ABV</code>, <code>price</code>, and <code>points</code>.</p>
+<p>With our data scraped, reshaped, cleaned, and saved, we can begin to explore <code>type</code>, <code>age</code>, <code>ABV</code>, <code>price</code>, and <code>points</code> to better understand univariate distributions and whether certain variables may be related.</p>
 <pre><code>## Rows: 2,584
 ## Columns: 6
 ## $ whisky &lt;chr&gt; &quot;“Double Malt” Speyside (Second Edition)&quot;, &quot;A. D. Rattray 18 y…
@@ -50,8 +49,8 @@ output:
 </div>
 <div id="benchmark-scotch-whiskies" class="section level2">
 <h2>Benchmark Scotch Whiskies</h2>
-<p>If an ultimate goal is to determine which bottle(s) of scotch to buy next, it’s worthwhile to establish a benchmark of what I already know I like. To keep things simple, let’s select two whiskies with slightly different profiles to serve as benchmarks.</p>
-<p><strong>Glenfiddich 12 year old</strong>: When my <a href="https://www.google.com/">generous housemate in Los Angeles from Part 1</a> gifted me two bottles of whisk(e)y, one was Woodford Reserve bourbon, and the other was Glenfiddich 12, so this whisky holds a special place in my heart. Glenfiddich 12 also happens to be deliciously fruity, sherried, and smooth. Plus, it’s reasonably affordable for scotch and widely available in U.S. liquor stores, resulting in a solid, reliable, and popular whisky with entry-level appeal. While in Scotland and touring the Speyside region, my wife and I visited Glenfiddich and sampled at least 10 drams of different scotch whiskies (we got tipsy and lost count). Glenfiddich 12 was the very first scotch I ever tried, and while I’ve since enjoyed dozens of other varieties, it remains a memorable favorite for me.</p>
+<p>If an ultimate goal is to determine which bottle(s) of scotch to buy next, it’s worthwhile to establish a benchmark of what I already know I like. To keep things simple, I’ll select two whiskies with slightly different profiles to serve as benchmarks.</p>
+<p><strong>Glenfiddich 12 year old</strong>: When my <a href="https://bengreenwald.io/project/exploring-whisky-scotch-part1/">generous housemate in Los Angeles from Part 1</a> gifted me two bottles of whisk(e)y, one was Woodford Reserve bourbon, and the other was Glenfiddich 12, so this whisky holds a special place in my heart. I find Glenfiddich 12 to be deliciously fruity, sherried, and smooth. Plus, it’s reasonably affordable for scotch and widely available in U.S. liquor stores, resulting in a solid, reliable, and popular whisky with entry-level appeal. While in Scotland and touring the Speyside region, my wife and I visited Glenfiddich and sampled at least 10 drams of different scotch whiskies. Glenfiddich 12 was the very first scotch I ever tried, and while I’ve since enjoyed dozens of other varieties, it remains a memorable favorite for me.</p>
 <figure>
 <img src="glenfiddich-front.jpg" />
 <figcaption>
@@ -60,7 +59,7 @@ output:
 </body>
 </figcaption>
 </figure>
-<p><strong>Glengoyne 21 year old</strong>: A few years before our honeymoon pilgrimage to Scotland, my wife’s family toured Scotland and returned home raving about a special experience at Glengoyne, a respected distillery nestled in the gorgeous countryside directly upon the <a href="https://en.wikipedia.org/wiki/Highland_Boundary_Fault">Highland Line</a> that separates the Highland and Lowland regions in Scotland. Naturally, Glengoyne became our first stop on our first day in Scotland, and it didn’t disappoint. After an incredible tour of the historic distillery, we settled in for a dual tasting of Glengoyne scotch paired with artisanal chocolates. I’ll never forget the smooth, spicy vanilla notes of Glengoyne 21 alongside the velvety chocolate treats. Compared to Glenfiddich 12, Glengoyne 21 is harder to find in the U.S. and pricier as well, but it’s certainly worth the extra coin for something special.</p>
+<p><strong>Glengoyne 21 year old</strong>: A few years before our honeymoon pilgrimage to Scotland, my wife’s family toured Scotland and returned home raving about a special experience at Glengoyne, a respected distillery nestled in the gorgeous countryside directly upon the <a href="https://en.wikipedia.org/wiki/Highland_Boundary_Fault">Highland Line</a> that separates the Highland and Lowland regions in Scotland. Naturally, Glengoyne became our first stop on our first day in Scotland, and it didn’t disappoint. After an incredible tour of the historic distillery, we settled in for a dual tasting of Glengoyne scotch paired with artisanal chocolates. I’ll never forget the smooth, spicy vanilla notes of Glengoyne 21 alongside the velvety chocolate treats. Compared to Glenfiddich 12, Glengoyne 21 is much harder to find in the U.S. and pricier as well, but it’s certainly worth the extra coin for something special.</p>
 <figure>
 <img src="glengoyne-chocolate.jpg"  width="75%"/>
 <figcaption>
@@ -69,12 +68,12 @@ output:
 </body>
 </figcaption>
 </figure>
-<p>We’ll periodically reference these two whiskies throughout the extended project.</p>
+<p>I’ll periodically reference these two whiskies throughout the extended project.</p>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#tsslvrgzrk .gt_table {
+#bjphrboxtz .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -99,7 +98,7 @@ output:
   border-left-color: #D3D3D3;
 }
 
-#tsslvrgzrk .gt_heading {
+#bjphrboxtz .gt_heading {
   background-color: #222222;
   text-align: center;
   border-bottom-color: #222222;
@@ -111,7 +110,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#tsslvrgzrk .gt_title {
+#bjphrboxtz .gt_title {
   color: #FFFFFF;
   font-size: 125%;
   font-weight: initial;
@@ -121,7 +120,7 @@ output:
   border-bottom-width: 0;
 }
 
-#tsslvrgzrk .gt_subtitle {
+#bjphrboxtz .gt_subtitle {
   color: #FFFFFF;
   font-size: 85%;
   font-weight: initial;
@@ -131,13 +130,13 @@ output:
   border-top-width: 0;
 }
 
-#tsslvrgzrk .gt_bottom_border {
+#bjphrboxtz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tsslvrgzrk .gt_col_headings {
+#bjphrboxtz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -152,7 +151,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#tsslvrgzrk .gt_col_heading {
+#bjphrboxtz .gt_col_heading {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -172,7 +171,7 @@ output:
   overflow-x: hidden;
 }
 
-#tsslvrgzrk .gt_column_spanner_outer {
+#bjphrboxtz .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -184,15 +183,15 @@ output:
   padding-right: 4px;
 }
 
-#tsslvrgzrk .gt_column_spanner_outer:first-child {
+#bjphrboxtz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tsslvrgzrk .gt_column_spanner_outer:last-child {
+#bjphrboxtz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tsslvrgzrk .gt_column_spanner {
+#bjphrboxtz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -204,7 +203,7 @@ output:
   width: 100%;
 }
 
-#tsslvrgzrk .gt_group_heading {
+#bjphrboxtz .gt_group_heading {
   padding: 8px;
   color: #FFFFFF;
   background-color: #222222;
@@ -226,7 +225,7 @@ output:
   vertical-align: middle;
 }
 
-#tsslvrgzrk .gt_empty_group_heading {
+#bjphrboxtz .gt_empty_group_heading {
   padding: 0.5px;
   color: #FFFFFF;
   background-color: #222222;
@@ -241,15 +240,15 @@ output:
   vertical-align: middle;
 }
 
-#tsslvrgzrk .gt_from_md > :first-child {
+#bjphrboxtz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tsslvrgzrk .gt_from_md > :last-child {
+#bjphrboxtz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tsslvrgzrk .gt_row {
+#bjphrboxtz .gt_row {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -268,7 +267,7 @@ output:
   overflow-x: hidden;
 }
 
-#tsslvrgzrk .gt_stub {
+#bjphrboxtz .gt_stub {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -280,7 +279,7 @@ output:
   padding-left: 12px;
 }
 
-#tsslvrgzrk .gt_summary_row {
+#bjphrboxtz .gt_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -290,7 +289,7 @@ output:
   padding-right: 5px;
 }
 
-#tsslvrgzrk .gt_first_summary_row {
+#bjphrboxtz .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -300,7 +299,7 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#tsslvrgzrk .gt_grand_summary_row {
+#bjphrboxtz .gt_grand_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -310,7 +309,7 @@ output:
   padding-right: 5px;
 }
 
-#tsslvrgzrk .gt_first_grand_summary_row {
+#bjphrboxtz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -320,11 +319,11 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#tsslvrgzrk .gt_striped {
+#bjphrboxtz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tsslvrgzrk .gt_table_body {
+#bjphrboxtz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -333,7 +332,7 @@ output:
   border-bottom-color: #D3D3D3;
 }
 
-#tsslvrgzrk .gt_footnotes {
+#bjphrboxtz .gt_footnotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -347,13 +346,13 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#tsslvrgzrk .gt_footnote {
+#bjphrboxtz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#tsslvrgzrk .gt_sourcenotes {
+#bjphrboxtz .gt_sourcenotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -367,46 +366,46 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#tsslvrgzrk .gt_sourcenote {
+#bjphrboxtz .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#tsslvrgzrk .gt_left {
+#bjphrboxtz .gt_left {
   text-align: left;
 }
 
-#tsslvrgzrk .gt_center {
+#bjphrboxtz .gt_center {
   text-align: center;
 }
 
-#tsslvrgzrk .gt_right {
+#bjphrboxtz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tsslvrgzrk .gt_font_normal {
+#bjphrboxtz .gt_font_normal {
   font-weight: normal;
 }
 
-#tsslvrgzrk .gt_font_bold {
+#bjphrboxtz .gt_font_bold {
   font-weight: bold;
 }
 
-#tsslvrgzrk .gt_font_italic {
+#bjphrboxtz .gt_font_italic {
   font-style: italic;
 }
 
-#tsslvrgzrk .gt_super {
+#bjphrboxtz .gt_super {
   font-size: 65%;
 }
 
-#tsslvrgzrk .gt_footnote_marks {
+#bjphrboxtz .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="tsslvrgzrk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="bjphrboxtz" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -446,54 +445,53 @@ output:
 <div id="scotch-type" class="section level2">
 <h2>Scotch Type</h2>
 <p><em>Which type of scotch whisky is most commonly reviewed by Whisky Advocate?</em></p>
-<p>Definitions of scotch whisky <code>type</code> are fairly nuanced. When most people think of scotch (myself included), they probably imagine <strong>single malt scotch</strong>, a type of whisky that requires a litany of very specific restrictions. Single malt scotch <em>must</em> be:</p>
+<p>Definitions of scotch whisky <code>type</code> are fairly nuanced. When most people think of scotch (myself included), they probably imagine <strong>single malt scotch</strong>, a type of whisky that requires a litany of very specific restrictions. For example, single malt scotch <em>must</em> be:</p>
 <ul>
 <li>Distilled at a single distillery in Scotland using a pot still distillation process</li>
 <li>Made from a mash of malted barley</li>
 <li>Matured in oak casks in Scotland for at least 3 years and 1 day (commonly, much longer)</li>
 </ul>
-<p>Today, single malt scotch is often considered by purists to be the “premier” scotch whisky type; single malts convey nuance, authenticity, and elegance as they boldly stand alone (neat) or with a few drops of water in a <a href="https://www.glencairnwhiskyglass.com/">Glencairn whisky glass</a>. But despite the reverence towards single malts, blended whisky far outpaces single malt in global sales, <a href="https://www.thescotchadvocate.com/blended-scotch.html">accounting for roughly 90% of all scotch sold worldwide</a>. Blended whisky is often cheaper and can be deployed in cocktails, and it takes great skill, knowledge, and experience to design a perfect blend of different whiskies. Our data include two types of blended whisky:</p>
+<p>There are a considerable amount of scotch drinkers that consider single malt scotch to be the “premier” scotch whisky type; single malts convey nuance, authenticity, and elegance as they boldly stand alone (neat) or with a few drops of water in a <a href="https://www.glencairnwhiskyglass.com/">Glencairn whisky glass</a>. But despite the reverence towards single malts, blended whisky far outpaces single malt in global sales, <a href="https://www.thescotchadvocate.com/blended-scotch.html">accounting for roughly 90% of all scotch sold worldwide</a>. Blended whisky is often cheaper and can be deployed in cocktails, and it takes great skill, knowledge, and experience to design a perfect blend of different whiskies. In addition to single malt scotch, these data include two types of blended whisky:</p>
 <ul>
-<li><strong>Blended Scotch</strong>: The most common blended variety, which mixes malt whiskies with grain whiskies (whisky made from a non-barley mash) from several different distilleries (<em>Johnnie Walker, Dewar’s</em>)</li>
-<li><strong>Blended Malt Scotch</strong>: A rarer variety that requires a blend of single malt scotches from at least two distilleries (<em>Compass Box</em>)</li>
+<li><strong>Blended Scotch</strong>: The most common blended variety, which mixes malt whiskies with grain whiskies (whisky made from a non-barley mash) from several different distilleries (such as Johnnie Walker or Dewar’s)</li>
+<li><strong>Blended Malt Scotch</strong>: A rarer variety that requires a blend of single malt scotches from at least two distilleries (such as Compass Box)</li>
 </ul>
-<p>Admittedly, I stick to single malt scotch 99% of the time. I simply enjoy the taste of blended scotch less and also don’t love how most blended brands fail to divulge details about from where their component whiskies are actually sourced. <em>However</em>, I commit to keeping an open mind throughout this project in the interest of discovering new whiskies that I could grow to love – even if they are blended.</p>
+<p>Admittedly, I stick to single malt scotch 99% of the time. I tend to enjoy the taste of blended scotch less and also don’t love how some blended brands play coy about from where their component whiskies are actually sourced. <em>However</em>, I commit to keeping an open mind throughout this project in the interest of discovering new whiskies that I could grow to love – even if they are blended.</p>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="883.2" /></p>
 <p>In the above pictogram (generated using the <a href="https://github.com/hrbrmstr/waffle"><code>waffle</code></a> package), each tumbler glass represents 10 whisky releases in our scotch data. Whisky Advocate are overwhelmingly reviews single malt scotch releases (over 80%), despite the common estimate we previously reported that blended scotch accounts for 90% of sales worldwide.</p>
-<p>Blended scotch, then, appears to be disproportionately featured by Whisky Advocate. Perhaps Whisky Advocate deliberately favors single malts to appeal to their readers, or like other “whisky snobs,” they have their own strong preference for single malts. Or perhaps there are simply fewer types of blended scotch out there that dominate sales attention, compared to a deluge of nuanced single malt varieties that each maintain their own niche markets.</p>
+<p>Blended scotch, then, appears to be disproportionately featured by Whisky Advocate. Perhaps Whisky Advocate deliberately favors single malts to appeal to their readers, or like other “whisky snobs,” they have their own strong preference for single malts. Or maybe there are simply fewer types of blended scotch out there that dominate sales attention, compared to a deluge of nuanced single malt varieties that each maintain their own niche markets.</p>
 <p>Later, we’ll take a closer look at <code>ABV</code>, <code>price</code>, and <code>points</code> grouped by whisky <code>type</code> to discern if any trends emerge, but first, a quick peek at whisky <code>age</code>.</p>
 </div>
 <div id="age" class="section level2">
 <h2>Age</h2>
-<p>A whisky’s listed <code>age</code> is a guarantee of the youngest whisky used in the bottling. As mentioned, scotch whisky must be aged in casks for at least 3 years, but there are several more common ages found in scotch whisky releases, as evidenced by the interactive plot below.</p>
-<iframe seamless src="age_plotly.html" width="100%" height="500">
-</iframe>
+<p>A whisky’s listed <code>age</code> is a guarantee of the youngest whisky used in the bottling. As mentioned, scotch whisky must be aged in casks for at least 3 years, but there are several more common ages found in scotch whisky releases.</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>12 year old scotch, and to a lesser extent whiskies aged 10, 15, 18, and 21 years, are very common across the industry. The apparent reasons why these ages occur most often? Marketing and tradition. It’s been suggested that, when single malt scotch started to become more popular in the past half century, major producers and distillers poised to enter the market established a baseline of 12, 15, and 18 year whiskies dictated by their abundant supply at the time.</p>
-<p>Since then, ages in these increments have become increasingly customary across the industry, perhaps because they are the optimal age for whiskies, but more likely because consumers over the years have come to associate “quality scotch” with scotch aged at least 12 years and they sell better, depending on the market. Many consumers also lust after extremely old whiskies because they believe that “old” = “rare” = “expensive” = “exquisite” Special releases and collector’s items account for the bumps at 25 and 30 years, followed by 35, 40, and 50 years.</p>
+<p>Since then, ages in these increments have become increasingly customary across the industry, perhaps because they are the optimal age for whiskies, but more likely because consumers over the years have come to associate “quality scotch” with scotch aged at least 12 years, which sells better depending on the market. Many consumers also lust after extremely old whiskies because they believe that “old” = “rare” = “expensive” = “exquisite.” Special releases and collector’s items account for the bumps at 25 and 30 years, followed by 35, 40, and 50 years.</p>
 <p>But aging whisky is trickier than “older is better.” A very young whisky, while perhaps less smooth and less attractive to consumers optically, can still be very tasty and is much quicker to produce for distilleries with supply/demand issues. On the flip side, each year in the barrel for a very old whisky means less product (whisky can evaporate at a rate of 1% per year!), plus more “barrel taste” that further dilutes the flavor of the whisky. Distillers must find their own preferred balance of taste and marketability, which sits right around 12 years for most.</p>
 </div>
 <div id="abv" class="section level2">
 <h2>ABV</h2>
-<p>Aging also has implications on a whisky’s alcohol by volume, or <code>ABV</code>. Not only does whisky evaporate over time in the barrel, but its alcohol content decreases as well. So distillers work backwards when they initially fill their casks; whisky often starts between 60-75% ABV after distillation, but aging, diluting, and blending bring the ABV down closer to the legal minimum of 40%.</p>
-<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>As shown in the <a href="https://wilkelab.org/ggridges/">ridgeline plot</a> above, 40% represents not just the lower bound, but often the magic number, particularly for blended scotch. One explanation is that distillers may need to pay higher alcohol taxes on ABVs above 40% depending on the country, so striving for 40% ABV may save money. For whisky products released at cask strength (straight out of the barrel without any dilution), much higher ABVs at 55-60% or above are expected.</p>
+<p>Aging also has implications on a whisky’s alcohol by volume, or <code>ABV</code>. Not only does whisky evaporate over time in the barrel, but its alcohol content decreases as well. So distillers work backwards when they initially fill their casks; whisky often starts between 60-75% ABV after distillation, but aging, diluting, and blending bring ABV down closer to the legal minimum of 40%.</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>As shown in the <a href="https://wilkelab.org/ggridges/">ridgeline plot</a> above, 40% ABV represents not just the lower bound, but often the magic number, especially for blended scotch. One explanation is that distillers may need to pay higher alcohol taxes on ABVs above 40% depending on the country, so striving for 40% ABV can save money. For whisky products released at cask strength (straight out of the barrel without any dilution), much higher ABVs at 55-60% or above are expected.</p>
 <p>Why the bump at approximately 46% ABV across all three types, particularly single malt and blended malt? Look no further than chill filtration, the process of carefully cooling scotch down to roughly 0°C (32°F) and passing it through a filter before bottling. Fine single malt scotch (or blends created from them) naturally contain impurities and sediments left over from the distillation process and can become hazy in the bottle or when being served with ice or water. Chill filtration is a cosmetic solution that eliminates these imperfections. Both of my two benchmark whiskies, Glenfiddich 12 (40% ABV) and Glengoyne 21 (43% ABV), are among a healthy majority of scotch whiskies that are chill-filtered.</p>
 <p>Chill filtration is not without its haters, though! Many distillers and purist drinkers actively celebrate the authenticity and taste of whisky that hasn’t been chill-filtered, and this sensibility towards a more “natural product” has only gotten more popular in the last couple of decades. But without chill filtration, distillers must counteract a whisky’s propensity for haze in the presence of cooler temperatures by increasing its alcohol content to 46% ABV. Science!</p>
 </div>
 <div id="price" class="section level2">
 <h2>Price</h2>
 <p><em>Are single malt whiskies more expensive than blended varieties?</em></p>
-<p><code>price</code> is a critical variable in these data. As a relatively modest whisky consumer, I rarely pay over $100 on a bottle of scotch, but I find it remarkable how much collectors and connoisseurs are willing to pay to obtain the rarest whiskies on earth. In some cases, people will shell out tens or even hundreds of thousands of dollars for a single bottle!</p>
-<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>Unfortunately, this intense demand for the rarest of rare whiskies significantly drives up ultra-premium prices, and the resulting data demonstrates extreme positive skew, making the above ridgeline plot impossible to read. Let’s apply a log transformation to <code>price</code> to make this plot more legible and to help us understand the distribution of scotch prices.</p>
+<p><code>price</code> is a critical variable in these data. As a relatively modest whisky consumer, I rarely pay much over $100 on a bottle of scotch, so I find it remarkable how much collectors and connoisseurs are willing to pay to obtain the rarest whiskies on earth. In some cases, people will shell out tens or even hundreds of thousands of dollars for a single bottle!</p>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Unfortunately, this intense demand for the rarest of rare whiskies significantly drives up ultra-premium prices, so the resulting data is extremely positively skewed. As such, the above ridgeline plot is mostly impossible to read. Let’s apply a log transformation to <code>price</code> to make this plot more legible and to help us understand the distribution of scotch prices.</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>From here, we see that there are plenty of whiskies under $100, which is great for my wallet! I certainly expected to see the long tail for single malt scotch, with some premium varieties costing well over $10,000.</p>
-<p>In contrast, all but two blended malt options can be found for less than ~$600, though prices for Johnnie Walker Odyssey ($1,100) and The Famous Grouse 40 year old ($3,378) are tame all things considered. Blended scotch covers the entire spectrum; while there appears to be several blended releases that are wildly expensive, the vast majority can be purchased for under $1,000. Using $1,000 as a somewhat arbitrary threshold for “very expensive,” it appears that a higher proportion of single malt scotch in these data are pricey compared to blended varieties.</p>
+<p>In contrast, all but two blended malt options can be found for less than ~$600, though prices for Johnnie Walker Odyssey ($1,100) and The Famous Grouse 40 year old ($3,378) are a bit steep. Blended scotch covers the entire spectrum; while there appears to be several blended releases that are wildly expensive, the vast majority can be purchased for under $1,000. Using $1,000 as a somewhat arbitrary threshold for “very expensive,” it appears that a higher proportion of single malt scotch in these data are pricey compared to blended varieties.</p>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#kjtqsthftg .gt_table {
+#kffxablkfl .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -518,7 +516,7 @@ output:
   border-left-color: #D3D3D3;
 }
 
-#kjtqsthftg .gt_heading {
+#kffxablkfl .gt_heading {
   background-color: #222222;
   text-align: center;
   border-bottom-color: #222222;
@@ -530,7 +528,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#kjtqsthftg .gt_title {
+#kffxablkfl .gt_title {
   color: #FFFFFF;
   font-size: 125%;
   font-weight: initial;
@@ -540,7 +538,7 @@ output:
   border-bottom-width: 0;
 }
 
-#kjtqsthftg .gt_subtitle {
+#kffxablkfl .gt_subtitle {
   color: #FFFFFF;
   font-size: 85%;
   font-weight: initial;
@@ -550,13 +548,13 @@ output:
   border-top-width: 0;
 }
 
-#kjtqsthftg .gt_bottom_border {
+#kffxablkfl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kjtqsthftg .gt_col_headings {
+#kffxablkfl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -571,7 +569,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#kjtqsthftg .gt_col_heading {
+#kffxablkfl .gt_col_heading {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -591,7 +589,7 @@ output:
   overflow-x: hidden;
 }
 
-#kjtqsthftg .gt_column_spanner_outer {
+#kffxablkfl .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -603,15 +601,15 @@ output:
   padding-right: 4px;
 }
 
-#kjtqsthftg .gt_column_spanner_outer:first-child {
+#kffxablkfl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kjtqsthftg .gt_column_spanner_outer:last-child {
+#kffxablkfl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kjtqsthftg .gt_column_spanner {
+#kffxablkfl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -623,7 +621,7 @@ output:
   width: 100%;
 }
 
-#kjtqsthftg .gt_group_heading {
+#kffxablkfl .gt_group_heading {
   padding: 8px;
   color: #FFFFFF;
   background-color: #222222;
@@ -645,7 +643,7 @@ output:
   vertical-align: middle;
 }
 
-#kjtqsthftg .gt_empty_group_heading {
+#kffxablkfl .gt_empty_group_heading {
   padding: 0.5px;
   color: #FFFFFF;
   background-color: #222222;
@@ -660,15 +658,15 @@ output:
   vertical-align: middle;
 }
 
-#kjtqsthftg .gt_from_md > :first-child {
+#kffxablkfl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kjtqsthftg .gt_from_md > :last-child {
+#kffxablkfl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kjtqsthftg .gt_row {
+#kffxablkfl .gt_row {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -687,7 +685,7 @@ output:
   overflow-x: hidden;
 }
 
-#kjtqsthftg .gt_stub {
+#kffxablkfl .gt_stub {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -699,7 +697,7 @@ output:
   padding-left: 12px;
 }
 
-#kjtqsthftg .gt_summary_row {
+#kffxablkfl .gt_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -709,7 +707,7 @@ output:
   padding-right: 5px;
 }
 
-#kjtqsthftg .gt_first_summary_row {
+#kffxablkfl .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -719,7 +717,7 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#kjtqsthftg .gt_grand_summary_row {
+#kffxablkfl .gt_grand_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -729,7 +727,7 @@ output:
   padding-right: 5px;
 }
 
-#kjtqsthftg .gt_first_grand_summary_row {
+#kffxablkfl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -739,11 +737,11 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#kjtqsthftg .gt_striped {
+#kffxablkfl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kjtqsthftg .gt_table_body {
+#kffxablkfl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -752,7 +750,7 @@ output:
   border-bottom-color: #D3D3D3;
 }
 
-#kjtqsthftg .gt_footnotes {
+#kffxablkfl .gt_footnotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -766,13 +764,13 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#kjtqsthftg .gt_footnote {
+#kffxablkfl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#kjtqsthftg .gt_sourcenotes {
+#kffxablkfl .gt_sourcenotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -786,46 +784,46 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#kjtqsthftg .gt_sourcenote {
+#kffxablkfl .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#kjtqsthftg .gt_left {
+#kffxablkfl .gt_left {
   text-align: left;
 }
 
-#kjtqsthftg .gt_center {
+#kffxablkfl .gt_center {
   text-align: center;
 }
 
-#kjtqsthftg .gt_right {
+#kffxablkfl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kjtqsthftg .gt_font_normal {
+#kffxablkfl .gt_font_normal {
   font-weight: normal;
 }
 
-#kjtqsthftg .gt_font_bold {
+#kffxablkfl .gt_font_bold {
   font-weight: bold;
 }
 
-#kjtqsthftg .gt_font_italic {
+#kffxablkfl .gt_font_italic {
   font-style: italic;
 }
 
-#kjtqsthftg .gt_super {
+#kffxablkfl .gt_super {
   font-size: 65%;
 }
 
-#kjtqsthftg .gt_footnote_marks {
+#kffxablkfl .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="kjtqsthftg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="kffxablkfl" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -863,7 +861,7 @@ output:
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#msvaklxhnz .gt_table {
+#dekznucacx .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -888,7 +886,7 @@ output:
   border-left-color: #D3D3D3;
 }
 
-#msvaklxhnz .gt_heading {
+#dekznucacx .gt_heading {
   background-color: #222222;
   text-align: center;
   border-bottom-color: #222222;
@@ -900,7 +898,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#msvaklxhnz .gt_title {
+#dekznucacx .gt_title {
   color: #FFFFFF;
   font-size: 125%;
   font-weight: initial;
@@ -910,7 +908,7 @@ output:
   border-bottom-width: 0;
 }
 
-#msvaklxhnz .gt_subtitle {
+#dekznucacx .gt_subtitle {
   color: #FFFFFF;
   font-size: 85%;
   font-weight: initial;
@@ -920,13 +918,13 @@ output:
   border-top-width: 0;
 }
 
-#msvaklxhnz .gt_bottom_border {
+#dekznucacx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#msvaklxhnz .gt_col_headings {
+#dekznucacx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -941,7 +939,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#msvaklxhnz .gt_col_heading {
+#dekznucacx .gt_col_heading {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -961,7 +959,7 @@ output:
   overflow-x: hidden;
 }
 
-#msvaklxhnz .gt_column_spanner_outer {
+#dekznucacx .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -973,15 +971,15 @@ output:
   padding-right: 4px;
 }
 
-#msvaklxhnz .gt_column_spanner_outer:first-child {
+#dekznucacx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#msvaklxhnz .gt_column_spanner_outer:last-child {
+#dekznucacx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#msvaklxhnz .gt_column_spanner {
+#dekznucacx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -993,7 +991,7 @@ output:
   width: 100%;
 }
 
-#msvaklxhnz .gt_group_heading {
+#dekznucacx .gt_group_heading {
   padding: 8px;
   color: #FFFFFF;
   background-color: #222222;
@@ -1015,7 +1013,7 @@ output:
   vertical-align: middle;
 }
 
-#msvaklxhnz .gt_empty_group_heading {
+#dekznucacx .gt_empty_group_heading {
   padding: 0.5px;
   color: #FFFFFF;
   background-color: #222222;
@@ -1030,15 +1028,15 @@ output:
   vertical-align: middle;
 }
 
-#msvaklxhnz .gt_from_md > :first-child {
+#dekznucacx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#msvaklxhnz .gt_from_md > :last-child {
+#dekznucacx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#msvaklxhnz .gt_row {
+#dekznucacx .gt_row {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -1057,7 +1055,7 @@ output:
   overflow-x: hidden;
 }
 
-#msvaklxhnz .gt_stub {
+#dekznucacx .gt_stub {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -1069,7 +1067,7 @@ output:
   padding-left: 12px;
 }
 
-#msvaklxhnz .gt_summary_row {
+#dekznucacx .gt_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -1079,7 +1077,7 @@ output:
   padding-right: 5px;
 }
 
-#msvaklxhnz .gt_first_summary_row {
+#dekznucacx .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1089,7 +1087,7 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#msvaklxhnz .gt_grand_summary_row {
+#dekznucacx .gt_grand_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -1099,7 +1097,7 @@ output:
   padding-right: 5px;
 }
 
-#msvaklxhnz .gt_first_grand_summary_row {
+#dekznucacx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1109,11 +1107,11 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#msvaklxhnz .gt_striped {
+#dekznucacx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#msvaklxhnz .gt_table_body {
+#dekznucacx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1122,7 +1120,7 @@ output:
   border-bottom-color: #D3D3D3;
 }
 
-#msvaklxhnz .gt_footnotes {
+#dekznucacx .gt_footnotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -1136,13 +1134,13 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#msvaklxhnz .gt_footnote {
+#dekznucacx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#msvaklxhnz .gt_sourcenotes {
+#dekznucacx .gt_sourcenotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -1156,46 +1154,46 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#msvaklxhnz .gt_sourcenote {
+#dekznucacx .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#msvaklxhnz .gt_left {
+#dekznucacx .gt_left {
   text-align: left;
 }
 
-#msvaklxhnz .gt_center {
+#dekznucacx .gt_center {
   text-align: center;
 }
 
-#msvaklxhnz .gt_right {
+#dekznucacx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#msvaklxhnz .gt_font_normal {
+#dekznucacx .gt_font_normal {
   font-weight: normal;
 }
 
-#msvaklxhnz .gt_font_bold {
+#dekznucacx .gt_font_bold {
   font-weight: bold;
 }
 
-#msvaklxhnz .gt_font_italic {
+#dekznucacx .gt_font_italic {
   font-style: italic;
 }
 
-#msvaklxhnz .gt_super {
+#dekznucacx .gt_super {
   font-size: 65%;
 }
 
-#msvaklxhnz .gt_footnote_marks {
+#dekznucacx .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="msvaklxhnz" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="dekznucacx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -1274,23 +1272,23 @@ output:
   
   
 </table></div>
-<p>All thirteen blended scotches pricing above $1,000 earned at least 91 rating points from Whisky Advocate reviewers – for that kind of money, they better be good! Six of the thirteen, including five of the top six most expensive varieties, belong to <a href="https://www.lastdropdistillers.com/">The Last Drop</a>. I hadn’t previously heard of The Last Drop, but it appears that they specialize in unearthing highly rare and extraordinary spirits from around the globe and selling from a very low stock at ultra-premium prices…and likely out of my budget.</p>
+<p>All thirteen blended scotches pricing above $1,000 earned at least 91 rating points from Whisky Advocate reviewers – for that kind of money, they better be good! Six of the thirteen, including five of the top six most expensive varieties, belong to <a href="https://www.lastdropdistillers.com/">The Last Drop</a>. I hadn’t previously heard of The Last Drop, but it appears that they specialize in unearthing highly rare and extraordinary spirits from around the globe and selling from a very low stock at ultra-premium prices…so, likely out of my budget.</p>
 <p>Not to be outdone, a more household brand (Johnnie Walker) appears four times within this upper echelon of blended scotch, including the Diamond Jubilee by John Walker &amp; Sons priced at a <em>staggering</em> $157,000. It blows every other price in these data out of the water, and it’s difficult to imagine just who exactly would spend that sort of money just for a bottle of whisky. For that price, I could purchase <strong>4243 bottles of Glenfiddich 12</strong> or <strong>1962 bottles of Glengoyne 21</strong>, more than enough for a lifetime.</p>
 <p>Of course, drinking the same exact whisky for the rest of my life contradicts the purpose of this project: to discover my <em>next</em> bottle of scotch, not the same stuff I already love. As this journey continues, it will eventually become crucial to narrow down the scope of whiskies based on a realistic budget. No sense in becoming love-struck with a particular whisky, only to find out it would clear out my bank account. We’ll come back to this further down the line.</p>
 </div>
 <div id="points" class="section level2">
 <h2>Points</h2>
 <p><em>Are single malt whiskies more highly-rated than blended varieties?</em></p>
-<p>My hyper-generalized expectations about scotch before beginning this project were that single malts taste better, costs more, and are rated higher than blended whisky. Until proven otherwise, I still prefer the taste of single malt, and we’ve so far learned that single malts tend to be more expensive than blends, with the huge exception of Johnnie Walker’s Diamond Jubilee. But what do the reviewers of Whisky Advocate think? Do their much more experienced and nuanced palettes hold single malts in higher regard as well?</p>
+<p>My hyper-generalized expectations about scotch before beginning this project were that single malts taste better, cost more, and are rated higher than blended whisky. Until proven otherwise, I still prefer the taste of single malt, and we’ve so far learned that single malts tend to be more expensive than blends, with the huge exception of Johnnie Walker’s Diamond Jubilee. But what do the reviewers of Whisky Advocate think? Do their much more experienced palettes hold single malts in higher regard as well?</p>
 <p>(<a href="https://www.whiskyadvocate.com/ratings-and-reviews/">A reminder of Whisky Advocate’s rating scale</a>.)</p>
-<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Judging from the ridgeline plot, there isn’t much variation between the distributions of rating <code>points</code> across the different whisky types. Most whiskies across all three types score between 80-89 points, indicating “Good” or “Very Good” scotch. If anything, single malt’s distribution appears ever so slightly shifted to the left, which suggests slightly lower ratings. Ratings for Glenfiddich 12 (86 points) and Glengoyne 21 (87 points) seem fairly average for single malts, so hopefully there is an opportunity for my next scotch to taste even better than my two benchmark whiskies without going terribly overboard on price.</p>
 <p>Take notice of how both blended distributions cut off sharply around 76-77 rating points, but the single malt tail extends way below that mark. Whiskies that score between 75-79 points are “Mediocre” (drinkable with minor flaws), whereas those below 74 points are flat out “Not Recommended.” Harsh! I’m curious about which single malts fit that description.</p>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ulqdaobzbl .gt_table {
+#oibtcaupnv .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1315,7 +1313,7 @@ output:
   border-left-color: #D3D3D3;
 }
 
-#ulqdaobzbl .gt_heading {
+#oibtcaupnv .gt_heading {
   background-color: #222222;
   text-align: center;
   border-bottom-color: #222222;
@@ -1327,7 +1325,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#ulqdaobzbl .gt_title {
+#oibtcaupnv .gt_title {
   color: #FFFFFF;
   font-size: 125%;
   font-weight: initial;
@@ -1337,7 +1335,7 @@ output:
   border-bottom-width: 0;
 }
 
-#ulqdaobzbl .gt_subtitle {
+#oibtcaupnv .gt_subtitle {
   color: #FFFFFF;
   font-size: 85%;
   font-weight: initial;
@@ -1347,13 +1345,13 @@ output:
   border-top-width: 0;
 }
 
-#ulqdaobzbl .gt_bottom_border {
+#oibtcaupnv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ulqdaobzbl .gt_col_headings {
+#oibtcaupnv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1368,7 +1366,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#ulqdaobzbl .gt_col_heading {
+#oibtcaupnv .gt_col_heading {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -1388,7 +1386,7 @@ output:
   overflow-x: hidden;
 }
 
-#ulqdaobzbl .gt_column_spanner_outer {
+#oibtcaupnv .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -1400,15 +1398,15 @@ output:
   padding-right: 4px;
 }
 
-#ulqdaobzbl .gt_column_spanner_outer:first-child {
+#oibtcaupnv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ulqdaobzbl .gt_column_spanner_outer:last-child {
+#oibtcaupnv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ulqdaobzbl .gt_column_spanner {
+#oibtcaupnv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1420,7 +1418,7 @@ output:
   width: 100%;
 }
 
-#ulqdaobzbl .gt_group_heading {
+#oibtcaupnv .gt_group_heading {
   padding: 8px;
   color: #FFFFFF;
   background-color: #222222;
@@ -1442,7 +1440,7 @@ output:
   vertical-align: middle;
 }
 
-#ulqdaobzbl .gt_empty_group_heading {
+#oibtcaupnv .gt_empty_group_heading {
   padding: 0.5px;
   color: #FFFFFF;
   background-color: #222222;
@@ -1457,15 +1455,15 @@ output:
   vertical-align: middle;
 }
 
-#ulqdaobzbl .gt_from_md > :first-child {
+#oibtcaupnv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ulqdaobzbl .gt_from_md > :last-child {
+#oibtcaupnv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ulqdaobzbl .gt_row {
+#oibtcaupnv .gt_row {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -1484,7 +1482,7 @@ output:
   overflow-x: hidden;
 }
 
-#ulqdaobzbl .gt_stub {
+#oibtcaupnv .gt_stub {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -1496,7 +1494,7 @@ output:
   padding-left: 12px;
 }
 
-#ulqdaobzbl .gt_summary_row {
+#oibtcaupnv .gt_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -1506,7 +1504,7 @@ output:
   padding-right: 5px;
 }
 
-#ulqdaobzbl .gt_first_summary_row {
+#oibtcaupnv .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1516,7 +1514,7 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#ulqdaobzbl .gt_grand_summary_row {
+#oibtcaupnv .gt_grand_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -1526,7 +1524,7 @@ output:
   padding-right: 5px;
 }
 
-#ulqdaobzbl .gt_first_grand_summary_row {
+#oibtcaupnv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1536,11 +1534,11 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#ulqdaobzbl .gt_striped {
+#oibtcaupnv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ulqdaobzbl .gt_table_body {
+#oibtcaupnv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1549,7 +1547,7 @@ output:
   border-bottom-color: #D3D3D3;
 }
 
-#ulqdaobzbl .gt_footnotes {
+#oibtcaupnv .gt_footnotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -1563,13 +1561,13 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#ulqdaobzbl .gt_footnote {
+#oibtcaupnv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#ulqdaobzbl .gt_sourcenotes {
+#oibtcaupnv .gt_sourcenotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -1583,46 +1581,46 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#ulqdaobzbl .gt_sourcenote {
+#oibtcaupnv .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#ulqdaobzbl .gt_left {
+#oibtcaupnv .gt_left {
   text-align: left;
 }
 
-#ulqdaobzbl .gt_center {
+#oibtcaupnv .gt_center {
   text-align: center;
 }
 
-#ulqdaobzbl .gt_right {
+#oibtcaupnv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ulqdaobzbl .gt_font_normal {
+#oibtcaupnv .gt_font_normal {
   font-weight: normal;
 }
 
-#ulqdaobzbl .gt_font_bold {
+#oibtcaupnv .gt_font_bold {
   font-weight: bold;
 }
 
-#ulqdaobzbl .gt_font_italic {
+#oibtcaupnv .gt_font_italic {
   font-style: italic;
 }
 
-#ulqdaobzbl .gt_super {
+#oibtcaupnv .gt_super {
   font-size: 65%;
 }
 
-#ulqdaobzbl .gt_footnote_marks {
+#oibtcaupnv .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="ulqdaobzbl" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table" style="table-layout: fixed;">
+<div id="oibtcaupnv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table" style="table-layout: fixed;">
   <colgroup>
     <col style="width:200px;"/>
     <col/>
@@ -1693,30 +1691,32 @@ output:
 </table></div>
 <p>It turns out <strong>Distillery Select ‘Inchmoan’ (distilled at Loch Lomond)</strong> negatively skews the single malt data with a very low rating of 63 (the only scotch in the entire database under 70 points). Recall that the lowest possible score is 50 points, so 63 is quite poor. Reviewers describe the whisky’s mid-palate as “harsh and unpleasant, with petroleum and vegetal notes.” Sounds truly awful!</p>
 <p>The other nine on this “coveted” list include some interesting appearances, such as another two poorly-rated whiskies labeled as “Distillery Select” that were also distilled at Loch Lomond and one mature whisky from Highland Park (typically known as a reputable brand). Further, the name of <strong>Tomintoul “With a Peaty Tang”</strong> doesn’t exactly inspire hope for a quality spirit, and reviewers confirm that.</p>
-<p>The most fascinating entry here is <strong>The Macallan 55 year old Lalique Decanter</strong>. Macallan is an enormously prestigious brand, and the fact that such a special, old scotch scores this low is intriguing. The reviewer writes, “…the age gets the best of this whisky. The flavors flatten out and the wood dominates through the finish as the leather notes linger.” Perhaps Macallan 55 Lalique serves as a good example that <em>older doesn’t always mean better</em> – too much time in the barrel may have ultimately thwarted the best parts of this whisky.</p>
+<p>The most fascinating entry here is <strong>The Macallan 55 year old Lalique Decanter</strong>. Macallan is an enormously prestigious brand, and the fact that such a special, old scotch scores this low is intriguing. The reviewer writes, “…the age gets the best of this whisky. The flavors flatten out and the wood dominates through the finish as the leather notes linger.” Perhaps Macallan 55 Lalique serves as a good example that <em>older doesn’t always mean better</em> – too much time in the barrel may have thwarted the best parts of this whisky.</p>
 </div>
 <div id="correlations-relationships" class="section level2">
 <h2>Correlations &amp; Relationships</h2>
-<p><em>Are older whiskies more expensive and/or highly-rated than younger whiskies?</em>
-<em>Do whiskies with stronger alcohol concentrations command higher prices and/or better ratings?</em>
-<em>Are more expensive whiskies rated more highly? Is splashing the cash worth it?</em></p>
+<ul>
+<li><em>Are older whiskies more expensive and/or highly-rated than younger whiskies?</em></li>
+<li><em>Do whiskies with stronger alcohol concentrations command higher prices and/or better ratings?</em></li>
+<li><em>Are more expensive whiskies rated more highly? Is splashing the cash worth it?</em></li>
+</ul>
 <p>So far, we’ve explored how distributions of whisky <code>age</code>, <code>ABV</code>, <code>price</code>, and rating <code>points</code> differ across scotch types. Could there be any meaningful relationships between combination(s) of those four variables?</p>
 <p>We can check the correlation coefficients between them, but recalling the plots we’ve examined thusfar, it appears that none of the data that underlie these variables are normally distributed. In fairness, we’ve grouped these distributions by scotch <code>type</code>, so let’s confirm that the ungrouped data is still not normally distributed with some Q-Q plots.</p>
-<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<p>We find tons of irregularities contained within these Q-Q plots. Based on deviations from each respective qqline, <code>age</code> looks fairly positively skewed, <code>ABV</code> unsurprisingly includes a massive stack of whiskies at 40% ABV, and <code>points</code> appears slightly negatively skewed. Of course, as we know, <code>price</code> is a complete mess, thanks to Diamond Jubilee and many other luxury releases.</p>
-<p>When these data represent extremely skewed or multimodal distributions, the Pearson correlation coefficient is no longer appropriate. Instead, we can use <a href="https://statistics.laerd.com/statistical-guides/spearmans-rank-order-correlation-statistical-guide.php">Spearman’s rank-order correlation coefficient</a> to more accurately work with non-linear data. Whereas a Pearson correlation is concerned with the <strong>linear relationship</strong> between two variables, Spearman’s correlation determines the strength and direction of their <strong>monotonic relationship</strong> – that is, how the variables tend to change together even if that change occurs at a non-constant rate. Using Spearman, each variable’s values are ranked before then performing the correlation on the ranked data. We can plot correlations using the <a href="https://ggobi.github.io/ggally/"><code>GGally</code></a> package.</p>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<p>We find the strongest relationship (<strong>0.81</strong>) between <code>age</code> and <code>price</code>, which is somewhat expected. Older whiskies are rarer and in less supply than younger whiskies, and there will always be at least a few customers desperate for lavishly expensive scotch. Once again when plotting <code>price</code>, it is helpful to use a log transformation to more clearly observe any relationship hidden by skew. Because Spearman’s correlation is concerned with ranked values, taking the log of <code>price</code> changes nothing about the monotonic relationship here.</p>
-<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p>Remember that, while the relationship between <code>age</code> and <code>price</code> may appear linear, it is not because <code>price</code> is log-transformed. From the plot, we can observe the highest density of whisky releases between 10-21 years of age, which corresponds to our earlier finding about common whisky ages. Most of these whiskies likely fall in a distillery’s <strong>core range</strong>, or their most popular releases, and their price point around $100 or under reflects mainstream appeal. In contrast, we see that most whiskies older than 40 years cost at least $1,000, if not much more.
-But is that older, more expensive scotch worth its weight in liquid gold? <em>Maybe sometimes, but not convincingly</em>. There is a mild positive correlations between <code>age</code> and <code>points</code> (<strong>0.35</strong>), but there are plenty of relatively young scotches that go dram for dram with rarer 30, 40, and 50 year old bottles, even at the upper extremes of the rating scale.</p>
+<p>We find tons of irregularities contained within these Q-Q plots. Based on deviations from each respective qqline, <code>age</code> looks fairly positively skewed, <code>ABV</code> unsurprisingly includes a massive stack of whiskies at 40% ABV, and <code>points</code> appears slightly negatively skewed. Of course, as we know, <code>price</code> is a complete mess, thanks to Diamond Jubilee and many other luxury releases.</p>
+<p>When data represent extremely skewed or multimodal distributions, the Pearson correlation coefficient is no longer appropriate. Instead, we can use <a href="https://statistics.laerd.com/statistical-guides/spearmans-rank-order-correlation-statistical-guide.php">Spearman’s rank-order correlation coefficient</a> to more accurately work with non-linear data. Whereas a Pearson correlation is concerned with the <strong>linear relationship</strong> between two variables, Spearman’s correlation determines the strength and direction of their <strong>monotonic relationship</strong> – that is, how the variables tend to change together even if that change occurs at a non-constant rate. Using Spearman, each variable’s values are ranked before then performing the correlation on the ranked data. We can plot correlations using the <a href="https://ggobi.github.io/ggally/"><code>GGally</code></a> package.</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-14-1.png" width="665.28" /></p>
+<p>We find the strongest relationship (<strong>0.81</strong>) between <code>age</code> and <code>price</code>, which is somewhat expected. Older whiskies are rarer and in less supply than younger whiskies, and there will always be at least a few customers desperate for lavishly expensive scotch. Once again when plotting <code>price</code>, it is helpful to use a log transformation to more clearly observe any relationship hidden by skew. Because Spearman’s correlation is concerned with ranked values, taking the log of <code>price</code> changes nothing about its monotonic relationship with <code>age</code> here.</p>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<p>How about the extremely mature whisky that scored nearly 20 <code>points</code> below its peers? It’s Macallan 55 Lalique, which you might recall includes flattened flavors, notes of leather, and an unpleasant dominant wood barrel taste. It’s possible that Whisky Advocate has been particularly harsh on this scotch, but given the publication’s willingness to give at least passable ratings to most whiskies it reviews, I suspect claims about 55 Lalique’s issues are warranted.</p>
-<p>There’s also a weak positive correlation between <code>price</code> and <code>points</code> (<strong>0.37</strong>). Macallan 55 Lalique is the star of the show again; it turns out that one of the worst-rated scotch whiskies across all of Whisky Advocate reportedly costs more than $10,000 a bottle! What an unfortunate blunder by Macallan. A lesson that even the most legendary distilleries can make mistakes.</p>
+<p>Remember that, while the relationship between <code>age</code> and <code>price</code> may appear linear, it is not because <code>price</code> is log-transformed. From the plot, we can observe the highest density of whisky releases between 10-21 years of age, which corresponds to our earlier finding about common whisky ages. Most of these whiskies likely fall in a distillery’s <strong>core range</strong>, or their most popular releases, and their price point around $100 or under reflects mainstream appeal. In contrast, we see that most whiskies older than 40 years cost at least $1,000, if not much more.</p>
+<p>But are those older, more expensive scotches worth their weight in liquid gold? Maybe sometimes, but <em>not convincingly</em>. There is a mild positive correlation between <code>age</code> and <code>points</code> (<strong>0.35</strong>), but there are plenty of relatively young scotches that go dram for dram with rarer 30, 40, and 50 year old bottles, even at the upper extremes of the rating scale.</p>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
-<p>On the bright side, it’s encouraging to see the high density of observations around $100 or just under and between 83-90 rating points. Recalling one of my benchmark scotches Glengoyne 21 (price: $80, points: 87), this range appears to be a sweet spot for affordability and quality with an abundance of options. While there are likely certain whiskies well over $100 that are deserving of the extra money, there may be diminishing returns beyond a certain price threshold. To answer one of our guiding questions, splashing <em>some</em> cash for better scotch seems recommended, but only to a reasonable extent. I can stomach $100 for a promising bottle.</p>
-<p>Lastly, there is a weak positive correlations between <code>ABV</code> and <code>price</code> (<strong>0.35</strong>). This relationship could be related to 1) higher prices for higher ABVs to offset additional taxes, and/or 2) higher prices for cask-strength whiskies that are seen as more premium products. The plot below doesn’t reveal much of great value, except the expected high density of releases across multiple price points at 40% ABV (the legal minimum), 43% ABV (considered by many distillers to be a natural sweet spot), and 46% ABV (to avoid chill filtration). In general, <code>price</code> and <code>points</code> seem largely unaffected by <code>ABV</code>, so no need to get hung up on alcohol content as a major deciding factor in our search. Besides, I’d rather prioritize pleasant flavors and aromas over strong alcohol content.</p>
+<p>How about the extremely mature whisky that scored nearly 20 points below its peers? It’s Macallan 55 Lalique, which you might recall includes flattened flavors, notes of leather, and an unpleasant dominant wood barrel taste. In fairness, it’s possible that Whisky Advocate has been particularly harsh on this scotch, but given the publication’s willingness to give at least passable ratings to most whiskies it reviews, I suspect claims about 55 Lalique’s issues are warranted.</p>
+<p>There’s also a weak positive correlation between <code>price</code> and <code>points</code> (<strong>0.37</strong>). Macallan 55 Lalique is the star of the show again; it turns out that one of the worst-rated scotches across all of Whisky Advocate reportedly costs more than $10,000 a bottle! What an unfortunate blunder by Macallan. A lesson that even the most legendary distilleries can make mistakes.</p>
 <p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>On the bright side, it’s encouraging to see the high density of observations around $100 or just under and between 83-90 rating points. Recalling one of my benchmark scotches Glengoyne 21 (price: $80, points: 87), this range appears to be a sweet spot for affordability and quality with an abundance of options. While there are likely certain whiskies well over $100 that are deserving of the extra money, there may be diminishing returns beyond a certain price threshold. To address one of our guiding questions, splashing <em>some</em> cash for better scotch seems warranted, but only to a reasonable extent. I can stomach $100 for a promising bottle.</p>
+<p>Lastly, there is a weak positive correlation between <code>ABV</code> and <code>price</code> (<strong>0.35</strong>). This relationship could be related to 1) higher prices for higher ABVs to offset additional taxes, and/or 2) higher prices for cask-strength whiskies that are seen as more premium products. The plot below doesn’t reveal much of great value, except the expected high density of releases across multiple price points at 40% ABV (the legal minimum), 43% ABV (considered by many distillers to be a natural sweet spot), and 46% ABV (to avoid chill filtration). In general, <code>price</code> and <code>points</code> seem largely unaffected by <code>ABV</code>, so no need to get hung up on alcohol content as a major deciding factor in our search. Besides, I’d rather prioritize pleasant flavors and aromas over alcoholic potency.</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 </div>
 </div>
 <div id="conclusions" class="section level1">
@@ -1724,8 +1724,8 @@ But is that older, more expensive scotch worth its weight in liquid gold? <em>Ma
 <p>Some of the major takeaways from this analysis:</p>
 <ul>
 <li><p><strong>Whisky Advocate overwhelmingly reviews single malt scotch whiskies</strong>, with fewer than 20% of reviewed releases identifying as blended scotch or blended malt scotch.</p></li>
-<li><p><strong>Scotch whisky is most commonly released at 10, 12, 15, 18, and 21 years old</strong>, though while 12 years in particular may be a sweet spot for taste and maturity, this industry trend also appears heavily driven by marketing and tradition.</p></li>
-<li><p><strong>Blended scotch is most often diluted to 40% ABV (the legal minimum)</strong>, while the ABV of malted scotch settles more frequently around 46% ABV – the perfect alcohol content by volume suited for whiskies without chill filtration. Further, <strong>ABV has little to no meaningful relationship with price or quality of scotch.</strong></p></li>
+<li><p><strong>Scotch whisky is most commonly released at 10, 12, 15, 18, and 21 years old</strong>. While 12 years in particular may be a sweet spot for taste and maturity, these industry trends also appear heavily driven by marketing and tradition.</p></li>
+<li><p><strong>Blended scotch is most often diluted to 40% ABV (the legal minimum)</strong>, while the ABV of malted scotch settles more frequently around 46% ABV – the perfect alcohol content by volume suited for malted whiskies without chill filtration. Further, <strong>ABV has little to no meaningful relationship with price or quality of scotch.</strong></p></li>
 <li><p><strong>Single malt scotch is generally more expensive than blended scotch</strong>, though a handful of premium blended brands sell whiskies well over $1,000. Johnnie Walker’s blend Diamond Jubilee clocks in as the priciest scotch in these data at $157,000 per bottle.</p></li>
 <li><p>Not only are <strong>single malt whiskies generally rated similarly to blended varieties</strong>, but all 10 of the whiskies deemed <em>Not Recommended</em> by Whisky Advocate are single malt scotches.</p></li>
 <li><p><strong>Scotch age has a strong, positive, non-linear relationship with price</strong>, but <em>older</em> doesn’t necessarily mean <em>better</em>, as age’s relationship with rating points is much weaker. Fortunately for my wallet, these data contain <strong>hundreds of highly-rated scotch whiskies at or below $100 per bottle</strong>, so there’s little need to break to bank to enjoy good scotch.</p></li>
@@ -1734,5 +1734,5 @@ But is that older, more expensive scotch worth its weight in liquid gold? <em>Ma
 </div>
 <div id="next-steps" class="section level1">
 <h1>Next Steps</h1>
-<p>We’ve compared variables such as <code>age</code>, <code>ABV</code>, <code>price</code>, and <code>points</code> and learned about whisky <code>type</code> from scotch sourced all across Scotland. Next, <a href="https://www.google.com/">Part 3</a> focuses on the regionality of scotch to better understand the distribution and clustering of distilleries across different regions of Scotland – and what makes each region’s whisky special and unique.</p>
+<p>We’ve compared variables such as <code>age</code>, <code>ABV</code>, <code>price</code>, and <code>points</code> and learned about whisky <code>type</code> from scotch sourced all across Scotland. Next, Part 3 will focus on the regionality of scotch to better understand the distribution and clustering of distilleries across different regions of Scotland – and what makes each region’s whisky so special and unique.</p>
 </div>

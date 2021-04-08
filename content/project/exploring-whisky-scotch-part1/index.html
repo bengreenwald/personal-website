@@ -13,11 +13,11 @@ output: html_document
 
 
 
-<p>Nearly a decade ago, I had recently completed a cross-country move to California with lofty dreams of producing inspiring stories for film and television. I was new to Los Angeles, and everyone was a stranger – no less my new housemate met through Craigslist. I had barely finished unpacking my few belongings on the first night in my new home when he beckoned me to the kitchen table, where he sat with two glasses and three different bottles of whisk(e)y.</p>
-<p>Until that moment, I had never tasted scotch before. I had always thought that characters who sipped scotch or bourbon in movies looked cool, and I had encountered cheaper varieties of the liquor hidden in mixed drinks during my college days, but I had never taken the time to truly <em>taste</em> it before. My housemate graciously led me through samples of each spirit, sharing little nuggets about flavor notes and the effects of ice, all while we had a few laughs and got to know each other. I enjoyed the experience immeasurably, and he could tell; he generously gifted me the remainder of two different bottles we had drank that evening. Suddenly, I had the beginnings of my very own collection of whisky.</p>
+<p>Nearly a decade ago, I had recently completed a cross-country move to California with lofty dreams of producing inspiring stories for film and television. I was new to Los Angeles, and everyone was a stranger – no less my new housemate whom I met through Craigslist. I had barely finished unpacking my few belongings on the first night in my new home when he beckoned me to the kitchen table, where he sat with two glasses and three different bottles of whisk(e)y.</p>
+<p>Until that moment, I had never tasted scotch before. I had always thought that characters who sipped scotch or bourbon in movies looked cool, and I had encountered cheaper varieties of the liquor hidden in mixed drinks during college, but I had never taken the time to truly <em>taste</em> it before. My housemate graciously led me through samples of each spirit, sharing little nuggets about flavor notes and the additive effects of ice and water, all while we had a few laughs and got to know each other. I enjoyed the experience immeasurably, and he could tell; he generously gifted me the remainder of two different bottles we had drank that evening. Suddenly, I had the beginnings of my very own collection of whisky.</p>
 <p>Much has changed in my life since then. Instead of living in Los Angeles with kind internet strangers, I live in Philadelphia with my lovely wife and dog. Instead of grinding through a career in the entertainment industry, I work in higher education with aspirations of transitioning to a more data-focused role. One constant that has remained, however, is a deep love for whisk(e)y, particularly scotch whisky. Nothing beats sipping on a glass of sweet, spicy scotch neat. I even convinced my wife to spend part of our honeymoon in Scotland touring distilleries and trying some of my favorite whiskies straight from the source.</p>
 <figure>
-<img src="glengoyne-front.jpg"  />
+<img src="glengoyne-front.jpg" width="70%" />
 <figcaption>
 <body>
 <em>Outside of Glengoyne Distillery on our first day in Scotland.</em>
@@ -51,36 +51,32 @@ output: html_document
 <div id="step-1-finding-the-data" class="section level2">
 <h2>Step 1: Finding the Data</h2>
 <p><em>From where can I scrape data on whisky reviews, ratings, and prices?</em></p>
-<p>During the COVID-19 pandemic, I read a book entitled <a href="https://www.amazon.com/Tasting-Whiskey-Insiders-Pleasures-Spirits/dp/1612123015">Tasting Whisky</a> by Lew Bryson, who happens to reside in the greater Philly area and therefore littered his book with easter eggs referencing the city I’ve grown to love. Bryson was a managing editor for the respected magazine <a href="https://www.whiskyadvocate.com/ratings-and-reviews/">Whisky Advocate</a> for nearly 20 years, so I had a peek at Whisky Advocate’s website for some inspiration on where I might find scotch whisky data online. Turns out that Whisky Advocate publicizes all of its magazine contributor reviews online, which includes nearly 10,000 whisk(e)y releases of all varieties from across the world and well over 2,000 scotch whisky reviews alone. Bingo!</p>
+<p>During the COVID-19 pandemic, I read a book entitled <a href="https://www.amazon.com/Tasting-Whiskey-Insiders-Pleasures-Spirits/dp/1612123015">Tasting Whisky</a> by Lew Bryson, who happens to reside in the greater Philly area and therefore filled his book with easter eggs referencing the city I’ve grown to love. Bryson was a managing editor for the respected magazine <a href="https://www.whiskyadvocate.com/ratings-and-reviews/">Whisky Advocate</a> for nearly 20 years, so I had a peek at Whisky Advocate’s website for some inspiration on where I might find scotch whisky data online. Turns out that Whisky Advocate publicizes all of its magazine contributor reviews online, which includes nearly 10,000 whisk(e)y releases of all varieties from across the world and well over 2,000 scotch whisky reviews alone. Bingo!</p>
 </div>
 <div id="step-2-whisky-ratings-reviews" class="section level2">
 <h2>Step 2: Whisky Ratings &amp; Reviews</h2>
-<p>We can use <a href="https://rvest.tidyverse.org/"><code>rvest</code></a> to <a href="https://github.com/bengreenwald/whisky/blob/main/code/scrape-scotch-ratings.R">scrape data from Whisky Advocate</a> for all scotch reviews, including variables such price, rating points, review description, and more. This was a good chance to sharpen my regex skills; whisky names on Whisky Advocate include not only the distillery name and specific release name, but also two key variables of interest: <code>age</code> and <code>ABV</code>. It was useful to bounce between the <a href="https://github.com/gagolews/stringi"><code>stringi</code></a> and <a href="https://stringr.tidyverse.org/index.html"><code>stringr</code></a> packages to extract <code>age</code> and <code>ABV</code> (where available) from each messy whisky name, as well as to clean up a few other variables.</p>
+<p>We can use <a href="https://rvest.tidyverse.org/"><code>rvest</code></a> to <a href="https://github.com/bengreenwald/whisky/blob/main/code/scrape-scotch-ratings.R">scrape data from Whisky Advocate</a> for all scotch reviews, including variables such <code>price</code>, rating <code>points</code>, review <code>description</code>, and more. This was a good chance to sharpen my regex skills; whisky names on Whisky Advocate include not only the distillery name and specific release name, but also two key variables of interest: <code>age</code> and <code>ABV</code>. It was useful to bounce between the <a href="https://github.com/gagolews/stringi"><code>stringi</code></a> and <a href="https://stringr.tidyverse.org/index.html"><code>stringr</code></a> packages to extract <code>age</code> and <code>ABV</code> (where available) from each messy whisky name, as well as to clean up a few other variables.</p>
 </div>
 <div id="step-3-distillery-names-regions-locations" class="section level2">
 <h2>Step 3: Distillery Names, Regions, &amp; Locations</h2>
 <p><em>From where can I find information on distilleries, brands, and regional locations?</em></p>
-<p>While scraping from Whisky Advocate, I realized that another valuable variable was hiding in plain sight within the whisky names: the distillery or brand name. However, distillery names are much less consistently presented than whisky ages or ABVs, which made extracting them far more difficult. I decided to scrape distillery names from another source, but most whisky distillery lists online only paid attention to single malt scotch brands and entirely ignored major blended brands such as Johnnie Walker or Dewar’s, which was a non-starter. Although most of the whiskies in Whisky Advocate’s scotch category are single malt, sources indicate that <a href="https://www.thescotchadvocate.com/blended-scotch.html">blended scotches comprise a whopping 90% of all scotch sales worldwide</a>, so it felt incomplete to ignore those brands entirely.</p>
+<p>While scraping from Whisky Advocate, I realized that another valuable variable was hiding in plain sight within the whisky names: the <code>distillery</code> or brand name. However, distillery names are much less consistently presented than whisky <code>age</code> or <code>ABV</code>, which made extracting them far more difficult. I decided to scrape distillery names from another source, but most scotch distillery lists online only paid attention to single malt scotch brands and entirely ignored major blended brands such as Johnnie Walker or Dewar’s, which was a non-starter for this project. Although most of the whiskies in Whisky Advocate’s scotch category are single malt, sources indicate that <a href="https://www.thescotchadvocate.com/blended-scotch.html">blended scotches comprise a whopping 90% of all scotch sales worldwide</a>, so it felt incomplete to ignore those brands entirely.</p>
 <p>Like nearly everything these days, the answer was on Wikipedia. To collect the most expansive list of distillery names, I <a href="https://github.com/bengreenwald/whisky/blob/main/code/scrape-scotch-distilleries.R">scraped data from three separate Wikipedia pages</a> (<a href="https://en.wikipedia.org/wiki/List_of_whisky_distilleries_in_Scotland">1</a>,
 <a href="https://en.wikipedia.org/wiki/Category:Distilleries_in_Scotland">2</a>,
-<a href="https://en.wikipedia.org/wiki/Category:Blended_Scotch_whisky">3</a>) and combined them. I was also keen on collecting data from link #1 on the regional location for each distillery. While Scotland is quite small geographically and is roughly the size of South Carolina, regional
-differences often translate into very unique flavor notes and aromas expressed in whisky, so I knew <code>region</code> would likely become an important variable to explore.</p>
+<a href="https://en.wikipedia.org/wiki/Category:Blended_Scotch_whisky">3</a>) and combined them. I was also keen on collecting data from link #1 on the regional location for each distillery. While Scotland is quite small geographically and is roughly the size of South Carolina, regional differences often translate into very unique flavor notes and aromas expressed in whisky, so I knew <code>region</code> would likely become an important variable to explore.</p>
 <p>While considering regional differences, I also realized I might like to plot distilleries on a map of Scotland later in the project to better understand the spread and clustering of distilleries across the country. I found what I needed and more on <a href="https://www.whisky.com/whisky-database/database.html">whisky.com</a>, where most distilleries have their own sub-page with tons of information. I focused on scraping distillery latitude and longitude coordinates, as well as regional names again to supplement whatever had been grabbed from Wikipedia. After cleaning the data, I had a solid list of distillery and brand names, including regional and coordinate locations for the majority of them.</p>
 </div>
 <div id="step-4-putting-it-together" class="section level2">
 <h2>Step 4: Putting It Together</h2>
-<p>To <a href="https://github.com/bengreenwald/whisky/blob/main/code/scotch-with-distilleries.R">join the ratings and distilleries data together</a>, we can implement a lovely package called <a href="https://github.com/dgrtwo/fuzzyjoin"><code>fuzzyjoin</code></a>, which includes variations on join operations in <a href="https://dplyr.tidyverse.org/index.html"><code>dplyr</code></a> that allow for inexact
-matching on values such as regular expressions (regex), Euclidean or Manhattan distance, and much more. <code>fuzzyjoin</code> was perfect here because it enabled distillery matches whenever the distillery name appeared <em>somewhere</em> within the longer whisky name, which was fairly irregular
-across whisky releases.</p>
-<p>A quirk during joining was that roughly 100 scotch releases included two different distillery names, either through a special collaboration between distilleries or because an independent bottler referenced the distillery from where their re-branded whisky originated. An example of
-the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 year old</strong>, where <strong>Gordon &amp; MacPhail</strong> is the independent bottler (one of the largest in Scotland) and <strong>Strathisla</strong> is the original single malt distiller.</p>
-<p>Whisky releases with two named distilleries created ~100 duplicate rows, which could bias conclusions reached about the data if included. Ultimately, I decided to create two versions of the full dataset: one that includes all duplicates for brand-level analyses, and a second without duplicates for all other analyses.</p>
+<p>To <a href="https://github.com/bengreenwald/whisky/blob/main/code/scotch-with-distilleries.R">join the ratings and distilleries data together</a>, we can implement a lovely package called <a href="https://github.com/dgrtwo/fuzzyjoin"><code>fuzzyjoin</code></a>, which includes variations on <a href="https://dplyr.tidyverse.org/index.html"><code>dplyr</code></a>’s join operations that allow for inexact matching on values such as regular expressions (regex), Euclidean or Manhattan distance, and much more. <code>fuzzyjoin</code> was perfect here because it enabled distillery matches whenever the distillery name appeared <em>somewhere</em> within the longer whisky name, which was fairly irregular across whisky releases.</p>
+<p>A quirk during joining was that roughly 100 scotch releases included two different distillery names, either through a special collaboration between distilleries or because an independent bottler referenced the distillery from where their re-branded whisky originated. An example of the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 year old</strong>, where <strong>Gordon &amp; MacPhail</strong> is the independent bottler (one of the largest in Scotland) and <strong>Strathisla</strong> is the original single malt distiller.</p>
+<p>Whisky releases with two named distilleries created ~100 duplicate rows, which could bias conclusions reached about the data if included. Ultimately, I decided to create two versions of the full dataset: one that includes all duplicates for brand-level analyses, and a second without duplicates for all other analyses. The table lists all variables collected and created through this process.</p>
 <p><br></p>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#hilzpqecrw .gt_table {
+#fvinsrnbim .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -105,7 +101,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   border-left-color: #D3D3D3;
 }
 
-#hilzpqecrw .gt_heading {
+#fvinsrnbim .gt_heading {
   background-color: #222222;
   text-align: center;
   border-bottom-color: #222222;
@@ -117,7 +113,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   border-right-color: #D3D3D3;
 }
 
-#hilzpqecrw .gt_title {
+#fvinsrnbim .gt_title {
   color: #FFFFFF;
   font-size: 125%;
   font-weight: initial;
@@ -127,7 +123,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   border-bottom-width: 0;
 }
 
-#hilzpqecrw .gt_subtitle {
+#fvinsrnbim .gt_subtitle {
   color: #FFFFFF;
   font-size: 85%;
   font-weight: initial;
@@ -137,13 +133,13 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   border-top-width: 0;
 }
 
-#hilzpqecrw .gt_bottom_border {
+#fvinsrnbim .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hilzpqecrw .gt_col_headings {
+#fvinsrnbim .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -158,7 +154,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   border-right-color: #D3D3D3;
 }
 
-#hilzpqecrw .gt_col_heading {
+#fvinsrnbim .gt_col_heading {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -178,7 +174,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   overflow-x: hidden;
 }
 
-#hilzpqecrw .gt_column_spanner_outer {
+#fvinsrnbim .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -190,15 +186,15 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   padding-right: 4px;
 }
 
-#hilzpqecrw .gt_column_spanner_outer:first-child {
+#fvinsrnbim .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hilzpqecrw .gt_column_spanner_outer:last-child {
+#fvinsrnbim .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hilzpqecrw .gt_column_spanner {
+#fvinsrnbim .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -210,7 +206,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   width: 100%;
 }
 
-#hilzpqecrw .gt_group_heading {
+#fvinsrnbim .gt_group_heading {
   padding: 8px;
   color: #FFFFFF;
   background-color: #222222;
@@ -232,7 +228,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   vertical-align: middle;
 }
 
-#hilzpqecrw .gt_empty_group_heading {
+#fvinsrnbim .gt_empty_group_heading {
   padding: 0.5px;
   color: #FFFFFF;
   background-color: #222222;
@@ -247,15 +243,15 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   vertical-align: middle;
 }
 
-#hilzpqecrw .gt_from_md > :first-child {
+#fvinsrnbim .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hilzpqecrw .gt_from_md > :last-child {
+#fvinsrnbim .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hilzpqecrw .gt_row {
+#fvinsrnbim .gt_row {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -274,7 +270,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   overflow-x: hidden;
 }
 
-#hilzpqecrw .gt_stub {
+#fvinsrnbim .gt_stub {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -286,7 +282,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   padding-left: 12px;
 }
 
-#hilzpqecrw .gt_summary_row {
+#fvinsrnbim .gt_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -296,7 +292,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   padding-right: 5px;
 }
 
-#hilzpqecrw .gt_first_summary_row {
+#fvinsrnbim .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -306,7 +302,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   border-top-color: #D3D3D3;
 }
 
-#hilzpqecrw .gt_grand_summary_row {
+#fvinsrnbim .gt_grand_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -316,7 +312,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   padding-right: 5px;
 }
 
-#hilzpqecrw .gt_first_grand_summary_row {
+#fvinsrnbim .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -326,11 +322,11 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   border-top-color: #D3D3D3;
 }
 
-#hilzpqecrw .gt_striped {
+#fvinsrnbim .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hilzpqecrw .gt_table_body {
+#fvinsrnbim .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -339,7 +335,7 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   border-bottom-color: #D3D3D3;
 }
 
-#hilzpqecrw .gt_footnotes {
+#fvinsrnbim .gt_footnotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -353,13 +349,13 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   border-right-color: #D3D3D3;
 }
 
-#hilzpqecrw .gt_footnote {
+#fvinsrnbim .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#hilzpqecrw .gt_sourcenotes {
+#fvinsrnbim .gt_sourcenotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -373,46 +369,46 @@ the latter would be <strong>Gordon &amp; MacPhail (distilled at Strathisla) 40 y
   border-right-color: #D3D3D3;
 }
 
-#hilzpqecrw .gt_sourcenote {
+#fvinsrnbim .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#hilzpqecrw .gt_left {
+#fvinsrnbim .gt_left {
   text-align: left;
 }
 
-#hilzpqecrw .gt_center {
+#fvinsrnbim .gt_center {
   text-align: center;
 }
 
-#hilzpqecrw .gt_right {
+#fvinsrnbim .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hilzpqecrw .gt_font_normal {
+#fvinsrnbim .gt_font_normal {
   font-weight: normal;
 }
 
-#hilzpqecrw .gt_font_bold {
+#fvinsrnbim .gt_font_bold {
   font-weight: bold;
 }
 
-#hilzpqecrw .gt_font_italic {
+#fvinsrnbim .gt_font_italic {
   font-style: italic;
 }
 
-#hilzpqecrw .gt_super {
+#fvinsrnbim .gt_super {
   font-size: 65%;
 }
 
-#hilzpqecrw .gt_footnote_marks {
+#fvinsrnbim .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="hilzpqecrw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table" style="table-layout: fixed;; width: 0px">
+<div id="fvinsrnbim" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table" style="table-layout: fixed;; width: 0px">
   <colgroup>
     <col style="width:225px;"/>
     <col style="width:600px;"/>
@@ -548,13 +544,13 @@ Here’s a glimpse of the data:</p>
 ## $ long              &lt;dbl&gt; NA, -6.286107, -2.955568, NA, -4.001415, -4.001415,…
 ## $ scrape_URL        &lt;chr&gt; NA, &quot;https://www.whisky.com/whisky-database/distill…
 ## $ collab            &lt;chr&gt; &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No…</code></pre>
-<p><a href="https://github.com/bengreenwald/whisky/blob/main/analysis/scotch-analysis-part1.R">Code</a> and <a href="https://github.com/bengreenwald/whisky/tree/main/data">data</a> for Part 1 available on
+<p><a href="https://github.com/bengreenwald/whisky/blob/main/analysis/scotch-analysis-part1.R">Code</a> and <a href="https://github.com/bengreenwald/whisky/tree/main/data">data</a> for Part 1 are available on
 Github.</p>
 </div>
 </div>
 <div id="next-steps" class="section level1">
 <h1>Next Steps</h1>
-<p>Now that we have our data, it’s time to dig in! Next, <a href="https://www.google.com/">Part 2</a> covers exploratory data analysis to better understand distributions of and relationships between variables including <code>distillery</code>, <code>type</code>, <code>age</code>, <code>ABV</code>, <code>price</code>, and <code>points</code>.</p>
+<p>Now that we have our data, it’s time to dig in! Next, <a href="https://bengreenwald.io/project/exploring-whisky-scotch-part2/">Part 2</a> covers exploratory data analysis to better understand distributions of and relationships between variables including <code>type</code>, <code>age</code>, <code>ABV</code>, <code>price</code>, and <code>points</code>.</p>
 <figure>
 <img src="glenfiddich-special-dram.jpg" width="60%" />
 <figcaption>
