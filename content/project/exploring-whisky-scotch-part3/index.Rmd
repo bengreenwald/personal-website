@@ -7,8 +7,7 @@ tags: [r, analysis, tableau]
 image:
   caption: "[Photo by BK on Unsplash](https://unsplash.com/photos/3kKFEe1nhGc)"
   focal_point: center
-plotly: true
-draft: false
+draft: true
 output: html_document
 ---
 
@@ -36,10 +35,6 @@ knitr::opts_knit$set(root.dir = "external/whisky")
 ```{r, include=FALSE}
 here::i_am("analysis/scotch-analysis-part3.R")
 source(here::here("analysis", "scotch-analysis-part3.R"))
-```
-
-```{r, include=FALSE}
-htmltools::tagList(htmltools::tags$script(src = "https://cdn.plot.ly/plotly-latest.min.js"))
 ```
 
 # Part 3: Mapping Distilleries & Regions
@@ -87,13 +82,11 @@ Rating points proved much less unruly and were safely averaged here. As a remind
 * 80-84 points — **Good**: *a solid, well-made whisky*
 * 75-79 points - **Mediocre**: *a drinkable whisky that may have minor flaws*
 * 50-74 points - **Not Recommended**
-
-<iframe src="external/whisky/output/brand_plotly.html" width=900 height=600> </iframe>
-
+<br>
 ```{r, echo=FALSE}
-brand_plotly
+shiny::div(brand_plotly, align = "center")
 ```
-
+<br>
 Observing distilleries across all regions together, most brands cluster together between a median price of \$50-200 and an average rating points of 84-90, indicating that there are plenty of affordable "Very Good" scotches out there to explore. Some brands notably outside of the cluster include: 
 
 * **Knockando**, a Speyside brand with only 2 releases, but a dreadfully low average rating
