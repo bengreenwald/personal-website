@@ -8,7 +8,7 @@ image:
   caption: "[Photo by BK on Unsplash](https://unsplash.com/photos/3kKFEe1nhGc)"
   focal_point: center
 plotly: true
-draft: true
+draft: false
 output: html_document
 ---
 
@@ -39,7 +39,7 @@ source(here::here("analysis", "scotch-analysis-part3.R"))
 ```
 
 ```{r, include=FALSE}
-#htmltools::tagList(htmltools::tags$script(src = "https://cdn.plot.ly/plotly-latest.min.js"))
+htmltools::tagList(htmltools::tags$script(src = "https://cdn.plot.ly/plotly-latest.min.js"))
 ```
 
 # Part 3: Mapping Distilleries & Regions
@@ -88,10 +88,10 @@ Rating points proved much less unruly and were safely averaged here. As a remind
 * 75-79 points - **Mediocre**: *a drinkable whisky that may have minor flaws*
 * 50-74 points - **Not Recommended**
 
-<iframe src="external/whisky/output/brand_plotly.html" width=900 height=600> </iframe> 
+<iframe src="external/whisky/output/brand_plotly.html" width=900 height=600> </iframe>
 
 ```{r, echo=FALSE}
-#brand_plotly
+brand_plotly
 ```
 
 Observing distilleries across all regions together, most brands cluster together between a median price of \$50-200 and an average rating points of 84-90, indicating that there are plenty of affordable "Very Good" scotches out there to explore. Some brands notably outside of the cluster include: 
