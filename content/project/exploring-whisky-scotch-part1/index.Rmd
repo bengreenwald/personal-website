@@ -1,7 +1,7 @@
 ---
 title: "Exploring Scotch Whisky: Part 1"
 subtitle: "Introduction & Building the Dataset"
-summary: I'm starting a journey to discover my next bottle of scotch. Let\'s start by scraping some data.
+summary: I'm on a journey to discover my next bottle of scotch. Let\'s start by scraping some data.
 date: "2021-03-01" 
 tags: [r, analysis, web scraping]
 image:

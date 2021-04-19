@@ -12,6 +12,14 @@ output:
   blogdown: html_page
 ---
 
+<script src="{{< blogdown/postref >}}index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="{{< blogdown/postref >}}index_files/plotly-binding/plotly.js"></script>
+<script src="{{< blogdown/postref >}}index_files/typedarray/typedarray.min.js"></script>
+<script src="{{< blogdown/postref >}}index_files/jquery/jquery.min.js"></script>
+<link href="{{< blogdown/postref >}}index_files/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/crosstalk/js/crosstalk.min.js"></script>
+<link href="{{< blogdown/postref >}}index_files/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/plotly-main/plotly-latest.min.js"></script>
 
 
 <p>Welcome to the next installment of <strong>Exploring Whisky: The Journey to My Next Bottle of Scotch</strong>, a multi-part project in which I leverage data to share fun facts about whisky as I continue my hopeful search to discover delicious scotch.</p>
@@ -73,7 +81,7 @@ output:
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#bjphrboxtz .gt_table {
+#wwcbicvzhk .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -98,7 +106,7 @@ output:
   border-left-color: #D3D3D3;
 }
 
-#bjphrboxtz .gt_heading {
+#wwcbicvzhk .gt_heading {
   background-color: #222222;
   text-align: center;
   border-bottom-color: #222222;
@@ -110,7 +118,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#bjphrboxtz .gt_title {
+#wwcbicvzhk .gt_title {
   color: #FFFFFF;
   font-size: 125%;
   font-weight: initial;
@@ -120,7 +128,7 @@ output:
   border-bottom-width: 0;
 }
 
-#bjphrboxtz .gt_subtitle {
+#wwcbicvzhk .gt_subtitle {
   color: #FFFFFF;
   font-size: 85%;
   font-weight: initial;
@@ -130,13 +138,13 @@ output:
   border-top-width: 0;
 }
 
-#bjphrboxtz .gt_bottom_border {
+#wwcbicvzhk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bjphrboxtz .gt_col_headings {
+#wwcbicvzhk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -151,7 +159,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#bjphrboxtz .gt_col_heading {
+#wwcbicvzhk .gt_col_heading {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -171,7 +179,7 @@ output:
   overflow-x: hidden;
 }
 
-#bjphrboxtz .gt_column_spanner_outer {
+#wwcbicvzhk .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -183,15 +191,15 @@ output:
   padding-right: 4px;
 }
 
-#bjphrboxtz .gt_column_spanner_outer:first-child {
+#wwcbicvzhk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bjphrboxtz .gt_column_spanner_outer:last-child {
+#wwcbicvzhk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bjphrboxtz .gt_column_spanner {
+#wwcbicvzhk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -203,7 +211,7 @@ output:
   width: 100%;
 }
 
-#bjphrboxtz .gt_group_heading {
+#wwcbicvzhk .gt_group_heading {
   padding: 8px;
   color: #FFFFFF;
   background-color: #222222;
@@ -225,7 +233,7 @@ output:
   vertical-align: middle;
 }
 
-#bjphrboxtz .gt_empty_group_heading {
+#wwcbicvzhk .gt_empty_group_heading {
   padding: 0.5px;
   color: #FFFFFF;
   background-color: #222222;
@@ -240,15 +248,15 @@ output:
   vertical-align: middle;
 }
 
-#bjphrboxtz .gt_from_md > :first-child {
+#wwcbicvzhk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bjphrboxtz .gt_from_md > :last-child {
+#wwcbicvzhk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bjphrboxtz .gt_row {
+#wwcbicvzhk .gt_row {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -267,7 +275,7 @@ output:
   overflow-x: hidden;
 }
 
-#bjphrboxtz .gt_stub {
+#wwcbicvzhk .gt_stub {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -279,7 +287,7 @@ output:
   padding-left: 12px;
 }
 
-#bjphrboxtz .gt_summary_row {
+#wwcbicvzhk .gt_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -289,7 +297,7 @@ output:
   padding-right: 5px;
 }
 
-#bjphrboxtz .gt_first_summary_row {
+#wwcbicvzhk .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -299,7 +307,7 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#bjphrboxtz .gt_grand_summary_row {
+#wwcbicvzhk .gt_grand_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -309,7 +317,7 @@ output:
   padding-right: 5px;
 }
 
-#bjphrboxtz .gt_first_grand_summary_row {
+#wwcbicvzhk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -319,11 +327,11 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#bjphrboxtz .gt_striped {
+#wwcbicvzhk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bjphrboxtz .gt_table_body {
+#wwcbicvzhk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -332,7 +340,7 @@ output:
   border-bottom-color: #D3D3D3;
 }
 
-#bjphrboxtz .gt_footnotes {
+#wwcbicvzhk .gt_footnotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -346,13 +354,13 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#bjphrboxtz .gt_footnote {
+#wwcbicvzhk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#bjphrboxtz .gt_sourcenotes {
+#wwcbicvzhk .gt_sourcenotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -366,46 +374,46 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#bjphrboxtz .gt_sourcenote {
+#wwcbicvzhk .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#bjphrboxtz .gt_left {
+#wwcbicvzhk .gt_left {
   text-align: left;
 }
 
-#bjphrboxtz .gt_center {
+#wwcbicvzhk .gt_center {
   text-align: center;
 }
 
-#bjphrboxtz .gt_right {
+#wwcbicvzhk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bjphrboxtz .gt_font_normal {
+#wwcbicvzhk .gt_font_normal {
   font-weight: normal;
 }
 
-#bjphrboxtz .gt_font_bold {
+#wwcbicvzhk .gt_font_bold {
   font-weight: bold;
 }
 
-#bjphrboxtz .gt_font_italic {
+#wwcbicvzhk .gt_font_italic {
   font-style: italic;
 }
 
-#bjphrboxtz .gt_super {
+#wwcbicvzhk .gt_super {
   font-size: 65%;
 }
 
-#bjphrboxtz .gt_footnote_marks {
+#wwcbicvzhk .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="bjphrboxtz" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="wwcbicvzhk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -464,9 +472,14 @@ output:
 </div>
 <div id="age" class="section level2">
 <h2>Age</h2>
-<p>A whisky’s listed <code>age</code> is a guarantee of the youngest whisky used in the bottling. As mentioned, scotch whisky must be aged in casks for at least 3 years, but there are several more common ages found in scotch whisky releases.</p>
-<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>12 year old scotch, and to a lesser extent whiskies aged 10, 15, 18, and 21 years, are very common across the industry. The apparent reasons why these ages occur most often? Marketing and tradition. It’s been suggested that, when single malt scotch started to become more popular in the past half century, major producers and distillers poised to enter the market established a baseline of 12, 15, and 18 year whiskies dictated by their abundant supply at the time.</p>
+<p>A whisky’s listed <code>age</code> is a guarantee of the youngest whisky used in the bottling. As mentioned, scotch whisky must be aged in casks for at least 3 years, but there are several more common ages found in scotch whisky releases.
+<br></p>
+<div align="center">
+<div id="htmlwidget-1" style="width:800px;height:450px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"data":[{"orientation":"v","width":[0.800000000000001,0.800000000000001,0.800000000000001,0.799999999999997,0.799999999999997,0.799999999999997],"base":[0,0,0,0,0,0],"x":[10,12,15,18,21,25],"y":[96,174,101,109,96,83],"text":["Age: 10<br />Releases:  96","Age: 12<br />Releases: 174","Age: 15<br />Releases: 101","Age: 18<br />Releases: 109","Age: 21<br />Releases:  96","Age: 25<br />Releases:  83"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(236,112,20,0.9)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"highlight","legendgroup":"highlight","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.8,0.800000000000001,0.800000000000001,0.800000000000001,0.800000000000001,0.800000000000001,0.800000000000001,0.800000000000001,0.800000000000001,0.799999999999999,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.799999999999997,0.800000000000011],"base":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"x":[3,5,6,7,8,9,11,13,14,16,17,19,20,22,23,24,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,48,50,55,56,60,70],"y":[3,7,8,7,30,16,27,31,63,58,46,17,33,21,23,17,21,15,16,13,59,14,11,10,15,33,9,16,5,4,32,6,5,2,1,4,3,3,14,2,1,1,1],"text":["Age:  3<br />Releases:   3","Age:  5<br />Releases:   7","Age:  6<br />Releases:   8","Age:  7<br />Releases:   7","Age:  8<br />Releases:  30","Age:  9<br />Releases:  16","Age: 11<br />Releases:  27","Age: 13<br />Releases:  31","Age: 14<br />Releases:  63","Age: 16<br />Releases:  58","Age: 17<br />Releases:  46","Age: 19<br />Releases:  17","Age: 20<br />Releases:  33","Age: 22<br />Releases:  21","Age: 23<br />Releases:  23","Age: 24<br />Releases:  17","Age: 26<br />Releases:  21","Age: 27<br />Releases:  15","Age: 28<br />Releases:  16","Age: 29<br />Releases:  13","Age: 30<br />Releases:  59","Age: 31<br />Releases:  14","Age: 32<br />Releases:  11","Age: 33<br />Releases:  10","Age: 34<br />Releases:  15","Age: 35<br />Releases:  33","Age: 36<br />Releases:   9","Age: 37<br />Releases:  16","Age: 38<br />Releases:   5","Age: 39<br />Releases:   4","Age: 40<br />Releases:  32","Age: 41<br />Releases:   6","Age: 42<br />Releases:   5","Age: 43<br />Releases:   2","Age: 44<br />Releases:   1","Age: 45<br />Releases:   4","Age: 46<br />Releases:   3","Age: 48<br />Releases:   3","Age: 50<br />Releases:  14","Age: 55<br />Releases:   2","Age: 56<br />Releases:   1","Age: 60<br />Releases:   1","Age: 70<br />Releases:   1"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(140,45,4,0.9)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"no_highlight","legendgroup":"no_highlight","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":51.4227203542272,"r":19.9252801992528,"b":65.6427286564273,"l":56.1228725612287},"plot_bgcolor":"rgba(242,242,242,1)","paper_bgcolor":"rgba(242,242,242,1)","font":{"color":"rgba(0,0,0,1)","family":"Roboto","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.79,73.79],"tickmode":"array","ticktext":["0","20","40","60"],"tickvals":[0,20,40,60],"categoryorder":"array","categoryarray":["0","20","40","60"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(0,0,0,1)","family":"Roboto","size":11.9551681195517},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(217,217,217,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"<b> Age (in years) <\/b>","font":{"color":"rgba(0,0,0,1)","family":"Roboto","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-8.7,182.7],"tickmode":"array","ticktext":["0","50","100","150"],"tickvals":[0,50,100,150],"categoryorder":"array","categoryarray":["0","50","100","150"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(0,0,0,1)","family":"Roboto","size":11.9551681195517},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(217,217,217,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"<b> Number of Releases <\/b>","font":{"color":"rgba(0,0,0,1)","family":"Roboto","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"Roboto","size":11.689497716895}},"hovermode":"closest","width":800,"height":450,"barmode":"relative","title":{"text":"<b> Distilleries overwhelming offer 12 year old scotch whiskies. <\/b> <br> <sup> <i> 10/15/18/21 years are also common, with specialty releases often starting at 25 years in increments of five. <\/i> <\/sup>","x":0.5}},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"b6b45ea1fb5d":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"b6b45ea1fb5d","visdat":{"b6b45ea1fb5d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<p><br>
+12 year old scotch, and to a lesser extent whiskies aged 10, 15, 18, and 21 years, are very common across the industry. The apparent reasons why these ages occur most often? Marketing and tradition. It’s been suggested that, when single malt scotch started to become more popular in the past half century, major producers and distillers poised to enter the market established a baseline of 12, 15, and 18 year whiskies dictated by their abundant supply at the time.</p>
 <p>Since then, ages in these increments have become increasingly customary across the industry, perhaps because they are the optimal age for whiskies, but more likely because consumers over the years have come to associate “quality scotch” with scotch aged at least 12 years, which sells better depending on the market. Many consumers also lust after extremely old whiskies because they believe that “old” = “rare” = “expensive” = “exquisite.” Special releases and collector’s items account for the bumps at 25 and 30 years, followed by 35, 40, and 50 years.</p>
 <p>But aging whisky is trickier than “older is better.” A very young whisky, while perhaps less smooth and less attractive to consumers optically, can still be very tasty and is much quicker to produce for distilleries with supply/demand issues. On the flip side, each year in the barrel for a very old whisky means less product (whisky can evaporate at a rate of 1% per year!), plus more “barrel taste” that further dilutes the flavor of the whisky. Distillers must find their own preferred balance of taste and marketability, which sits right around 12 years for most.</p>
 </div>
@@ -491,7 +504,7 @@ output:
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#kffxablkfl .gt_table {
+#kyignmktbm .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -516,7 +529,7 @@ output:
   border-left-color: #D3D3D3;
 }
 
-#kffxablkfl .gt_heading {
+#kyignmktbm .gt_heading {
   background-color: #222222;
   text-align: center;
   border-bottom-color: #222222;
@@ -528,7 +541,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#kffxablkfl .gt_title {
+#kyignmktbm .gt_title {
   color: #FFFFFF;
   font-size: 125%;
   font-weight: initial;
@@ -538,7 +551,7 @@ output:
   border-bottom-width: 0;
 }
 
-#kffxablkfl .gt_subtitle {
+#kyignmktbm .gt_subtitle {
   color: #FFFFFF;
   font-size: 85%;
   font-weight: initial;
@@ -548,13 +561,13 @@ output:
   border-top-width: 0;
 }
 
-#kffxablkfl .gt_bottom_border {
+#kyignmktbm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kffxablkfl .gt_col_headings {
+#kyignmktbm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -569,7 +582,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#kffxablkfl .gt_col_heading {
+#kyignmktbm .gt_col_heading {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -589,7 +602,7 @@ output:
   overflow-x: hidden;
 }
 
-#kffxablkfl .gt_column_spanner_outer {
+#kyignmktbm .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -601,15 +614,15 @@ output:
   padding-right: 4px;
 }
 
-#kffxablkfl .gt_column_spanner_outer:first-child {
+#kyignmktbm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kffxablkfl .gt_column_spanner_outer:last-child {
+#kyignmktbm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kffxablkfl .gt_column_spanner {
+#kyignmktbm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -621,7 +634,7 @@ output:
   width: 100%;
 }
 
-#kffxablkfl .gt_group_heading {
+#kyignmktbm .gt_group_heading {
   padding: 8px;
   color: #FFFFFF;
   background-color: #222222;
@@ -643,7 +656,7 @@ output:
   vertical-align: middle;
 }
 
-#kffxablkfl .gt_empty_group_heading {
+#kyignmktbm .gt_empty_group_heading {
   padding: 0.5px;
   color: #FFFFFF;
   background-color: #222222;
@@ -658,15 +671,15 @@ output:
   vertical-align: middle;
 }
 
-#kffxablkfl .gt_from_md > :first-child {
+#kyignmktbm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kffxablkfl .gt_from_md > :last-child {
+#kyignmktbm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kffxablkfl .gt_row {
+#kyignmktbm .gt_row {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -685,7 +698,7 @@ output:
   overflow-x: hidden;
 }
 
-#kffxablkfl .gt_stub {
+#kyignmktbm .gt_stub {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -697,7 +710,7 @@ output:
   padding-left: 12px;
 }
 
-#kffxablkfl .gt_summary_row {
+#kyignmktbm .gt_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -707,7 +720,7 @@ output:
   padding-right: 5px;
 }
 
-#kffxablkfl .gt_first_summary_row {
+#kyignmktbm .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -717,7 +730,7 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#kffxablkfl .gt_grand_summary_row {
+#kyignmktbm .gt_grand_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -727,7 +740,7 @@ output:
   padding-right: 5px;
 }
 
-#kffxablkfl .gt_first_grand_summary_row {
+#kyignmktbm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -737,11 +750,11 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#kffxablkfl .gt_striped {
+#kyignmktbm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kffxablkfl .gt_table_body {
+#kyignmktbm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -750,7 +763,7 @@ output:
   border-bottom-color: #D3D3D3;
 }
 
-#kffxablkfl .gt_footnotes {
+#kyignmktbm .gt_footnotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -764,13 +777,13 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#kffxablkfl .gt_footnote {
+#kyignmktbm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#kffxablkfl .gt_sourcenotes {
+#kyignmktbm .gt_sourcenotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -784,46 +797,46 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#kffxablkfl .gt_sourcenote {
+#kyignmktbm .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#kffxablkfl .gt_left {
+#kyignmktbm .gt_left {
   text-align: left;
 }
 
-#kffxablkfl .gt_center {
+#kyignmktbm .gt_center {
   text-align: center;
 }
 
-#kffxablkfl .gt_right {
+#kyignmktbm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kffxablkfl .gt_font_normal {
+#kyignmktbm .gt_font_normal {
   font-weight: normal;
 }
 
-#kffxablkfl .gt_font_bold {
+#kyignmktbm .gt_font_bold {
   font-weight: bold;
 }
 
-#kffxablkfl .gt_font_italic {
+#kyignmktbm .gt_font_italic {
   font-style: italic;
 }
 
-#kffxablkfl .gt_super {
+#kyignmktbm .gt_super {
   font-size: 65%;
 }
 
-#kffxablkfl .gt_footnote_marks {
+#kyignmktbm .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="kffxablkfl" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="kyignmktbm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -861,7 +874,7 @@ output:
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#dekznucacx .gt_table {
+#yegnfnwqsk .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -886,7 +899,7 @@ output:
   border-left-color: #D3D3D3;
 }
 
-#dekznucacx .gt_heading {
+#yegnfnwqsk .gt_heading {
   background-color: #222222;
   text-align: center;
   border-bottom-color: #222222;
@@ -898,7 +911,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#dekznucacx .gt_title {
+#yegnfnwqsk .gt_title {
   color: #FFFFFF;
   font-size: 125%;
   font-weight: initial;
@@ -908,7 +921,7 @@ output:
   border-bottom-width: 0;
 }
 
-#dekznucacx .gt_subtitle {
+#yegnfnwqsk .gt_subtitle {
   color: #FFFFFF;
   font-size: 85%;
   font-weight: initial;
@@ -918,13 +931,13 @@ output:
   border-top-width: 0;
 }
 
-#dekznucacx .gt_bottom_border {
+#yegnfnwqsk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dekznucacx .gt_col_headings {
+#yegnfnwqsk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -939,7 +952,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#dekznucacx .gt_col_heading {
+#yegnfnwqsk .gt_col_heading {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -959,7 +972,7 @@ output:
   overflow-x: hidden;
 }
 
-#dekznucacx .gt_column_spanner_outer {
+#yegnfnwqsk .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -971,15 +984,15 @@ output:
   padding-right: 4px;
 }
 
-#dekznucacx .gt_column_spanner_outer:first-child {
+#yegnfnwqsk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dekznucacx .gt_column_spanner_outer:last-child {
+#yegnfnwqsk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dekznucacx .gt_column_spanner {
+#yegnfnwqsk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -991,7 +1004,7 @@ output:
   width: 100%;
 }
 
-#dekznucacx .gt_group_heading {
+#yegnfnwqsk .gt_group_heading {
   padding: 8px;
   color: #FFFFFF;
   background-color: #222222;
@@ -1013,7 +1026,7 @@ output:
   vertical-align: middle;
 }
 
-#dekznucacx .gt_empty_group_heading {
+#yegnfnwqsk .gt_empty_group_heading {
   padding: 0.5px;
   color: #FFFFFF;
   background-color: #222222;
@@ -1028,15 +1041,15 @@ output:
   vertical-align: middle;
 }
 
-#dekznucacx .gt_from_md > :first-child {
+#yegnfnwqsk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dekznucacx .gt_from_md > :last-child {
+#yegnfnwqsk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dekznucacx .gt_row {
+#yegnfnwqsk .gt_row {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -1055,7 +1068,7 @@ output:
   overflow-x: hidden;
 }
 
-#dekznucacx .gt_stub {
+#yegnfnwqsk .gt_stub {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -1067,7 +1080,7 @@ output:
   padding-left: 12px;
 }
 
-#dekznucacx .gt_summary_row {
+#yegnfnwqsk .gt_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -1077,7 +1090,7 @@ output:
   padding-right: 5px;
 }
 
-#dekznucacx .gt_first_summary_row {
+#yegnfnwqsk .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1087,7 +1100,7 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#dekznucacx .gt_grand_summary_row {
+#yegnfnwqsk .gt_grand_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -1097,7 +1110,7 @@ output:
   padding-right: 5px;
 }
 
-#dekznucacx .gt_first_grand_summary_row {
+#yegnfnwqsk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1107,11 +1120,11 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#dekznucacx .gt_striped {
+#yegnfnwqsk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dekznucacx .gt_table_body {
+#yegnfnwqsk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1120,7 +1133,7 @@ output:
   border-bottom-color: #D3D3D3;
 }
 
-#dekznucacx .gt_footnotes {
+#yegnfnwqsk .gt_footnotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -1134,13 +1147,13 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#dekznucacx .gt_footnote {
+#yegnfnwqsk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#dekznucacx .gt_sourcenotes {
+#yegnfnwqsk .gt_sourcenotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -1154,46 +1167,46 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#dekznucacx .gt_sourcenote {
+#yegnfnwqsk .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#dekznucacx .gt_left {
+#yegnfnwqsk .gt_left {
   text-align: left;
 }
 
-#dekznucacx .gt_center {
+#yegnfnwqsk .gt_center {
   text-align: center;
 }
 
-#dekznucacx .gt_right {
+#yegnfnwqsk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dekznucacx .gt_font_normal {
+#yegnfnwqsk .gt_font_normal {
   font-weight: normal;
 }
 
-#dekznucacx .gt_font_bold {
+#yegnfnwqsk .gt_font_bold {
   font-weight: bold;
 }
 
-#dekznucacx .gt_font_italic {
+#yegnfnwqsk .gt_font_italic {
   font-style: italic;
 }
 
-#dekznucacx .gt_super {
+#yegnfnwqsk .gt_super {
   font-size: 65%;
 }
 
-#dekznucacx .gt_footnote_marks {
+#yegnfnwqsk .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="dekznucacx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="yegnfnwqsk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -1288,7 +1301,7 @@ output:
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#oibtcaupnv .gt_table {
+#zbmxiriuhu .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1313,7 +1326,7 @@ output:
   border-left-color: #D3D3D3;
 }
 
-#oibtcaupnv .gt_heading {
+#zbmxiriuhu .gt_heading {
   background-color: #222222;
   text-align: center;
   border-bottom-color: #222222;
@@ -1325,7 +1338,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#oibtcaupnv .gt_title {
+#zbmxiriuhu .gt_title {
   color: #FFFFFF;
   font-size: 125%;
   font-weight: initial;
@@ -1335,7 +1348,7 @@ output:
   border-bottom-width: 0;
 }
 
-#oibtcaupnv .gt_subtitle {
+#zbmxiriuhu .gt_subtitle {
   color: #FFFFFF;
   font-size: 85%;
   font-weight: initial;
@@ -1345,13 +1358,13 @@ output:
   border-top-width: 0;
 }
 
-#oibtcaupnv .gt_bottom_border {
+#zbmxiriuhu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#oibtcaupnv .gt_col_headings {
+#zbmxiriuhu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1366,7 +1379,7 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#oibtcaupnv .gt_col_heading {
+#zbmxiriuhu .gt_col_heading {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -1386,7 +1399,7 @@ output:
   overflow-x: hidden;
 }
 
-#oibtcaupnv .gt_column_spanner_outer {
+#zbmxiriuhu .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -1398,15 +1411,15 @@ output:
   padding-right: 4px;
 }
 
-#oibtcaupnv .gt_column_spanner_outer:first-child {
+#zbmxiriuhu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oibtcaupnv .gt_column_spanner_outer:last-child {
+#zbmxiriuhu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oibtcaupnv .gt_column_spanner {
+#zbmxiriuhu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1418,7 +1431,7 @@ output:
   width: 100%;
 }
 
-#oibtcaupnv .gt_group_heading {
+#zbmxiriuhu .gt_group_heading {
   padding: 8px;
   color: #FFFFFF;
   background-color: #222222;
@@ -1440,7 +1453,7 @@ output:
   vertical-align: middle;
 }
 
-#oibtcaupnv .gt_empty_group_heading {
+#zbmxiriuhu .gt_empty_group_heading {
   padding: 0.5px;
   color: #FFFFFF;
   background-color: #222222;
@@ -1455,15 +1468,15 @@ output:
   vertical-align: middle;
 }
 
-#oibtcaupnv .gt_from_md > :first-child {
+#zbmxiriuhu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oibtcaupnv .gt_from_md > :last-child {
+#zbmxiriuhu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oibtcaupnv .gt_row {
+#zbmxiriuhu .gt_row {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -1482,7 +1495,7 @@ output:
   overflow-x: hidden;
 }
 
-#oibtcaupnv .gt_stub {
+#zbmxiriuhu .gt_stub {
   color: #FFFFFF;
   background-color: #222222;
   font-size: 100%;
@@ -1494,7 +1507,7 @@ output:
   padding-left: 12px;
 }
 
-#oibtcaupnv .gt_summary_row {
+#zbmxiriuhu .gt_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -1504,7 +1517,7 @@ output:
   padding-right: 5px;
 }
 
-#oibtcaupnv .gt_first_summary_row {
+#zbmxiriuhu .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1514,7 +1527,7 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#oibtcaupnv .gt_grand_summary_row {
+#zbmxiriuhu .gt_grand_summary_row {
   color: #FFFFFF;
   background-color: #222222;
   text-transform: inherit;
@@ -1524,7 +1537,7 @@ output:
   padding-right: 5px;
 }
 
-#oibtcaupnv .gt_first_grand_summary_row {
+#zbmxiriuhu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1534,11 +1547,11 @@ output:
   border-top-color: #D3D3D3;
 }
 
-#oibtcaupnv .gt_striped {
+#zbmxiriuhu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#oibtcaupnv .gt_table_body {
+#zbmxiriuhu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1547,7 +1560,7 @@ output:
   border-bottom-color: #D3D3D3;
 }
 
-#oibtcaupnv .gt_footnotes {
+#zbmxiriuhu .gt_footnotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -1561,13 +1574,13 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#oibtcaupnv .gt_footnote {
+#zbmxiriuhu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#oibtcaupnv .gt_sourcenotes {
+#zbmxiriuhu .gt_sourcenotes {
   color: #FFFFFF;
   background-color: #222222;
   border-bottom-style: none;
@@ -1581,46 +1594,46 @@ output:
   border-right-color: #D3D3D3;
 }
 
-#oibtcaupnv .gt_sourcenote {
+#zbmxiriuhu .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#oibtcaupnv .gt_left {
+#zbmxiriuhu .gt_left {
   text-align: left;
 }
 
-#oibtcaupnv .gt_center {
+#zbmxiriuhu .gt_center {
   text-align: center;
 }
 
-#oibtcaupnv .gt_right {
+#zbmxiriuhu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oibtcaupnv .gt_font_normal {
+#zbmxiriuhu .gt_font_normal {
   font-weight: normal;
 }
 
-#oibtcaupnv .gt_font_bold {
+#zbmxiriuhu .gt_font_bold {
   font-weight: bold;
 }
 
-#oibtcaupnv .gt_font_italic {
+#zbmxiriuhu .gt_font_italic {
   font-style: italic;
 }
 
-#oibtcaupnv .gt_super {
+#zbmxiriuhu .gt_super {
   font-size: 65%;
 }
 
-#oibtcaupnv .gt_footnote_marks {
+#zbmxiriuhu .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="oibtcaupnv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table" style="table-layout: fixed;">
+<div id="zbmxiriuhu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table" style="table-layout: fixed;">
   <colgroup>
     <col style="width:200px;"/>
     <col/>
@@ -1734,5 +1747,5 @@ output:
 </div>
 <div id="next-steps" class="section level1">
 <h1>Next Steps</h1>
-<p>We’ve compared variables such as <code>age</code>, <code>ABV</code>, <code>price</code>, and <code>points</code> and learned about whisky <code>type</code> from scotch sourced all across Scotland. Next, Part 3 will focus on the regionality of scotch to better understand the distribution and clustering of distilleries across different regions of Scotland – and what makes each region’s whisky so special and unique.</p>
+<p>We’ve compared variables such as <code>age</code>, <code>ABV</code>, <code>price</code>, and <code>points</code> and learned about whisky <code>type</code> from scotch sourced all across Scotland. Next, <a href="https://bengreenwald.io/project/exploring-whisky-scotch-part3/">Part 3</a> focuses on the regionality of scotch to better understand the distribution and clustering of distilleries across different regions of Scotland – and what makes each region’s whisky so special and unique.</p>
 </div>

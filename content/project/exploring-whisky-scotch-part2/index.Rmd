@@ -107,11 +107,11 @@ Later, we'll take a closer look at `ABV`, `price`, and `points` grouped by whisk
 
 ## Age
 A whisky's listed `age` is a guarantee of the youngest whisky used in the bottling. As mentioned, scotch whisky must be aged in casks for at least 3 years, but there are several more common ages found in scotch whisky releases.
-
+<br>
 ```{r, echo=FALSE}
-age_plot_title
+shiny::div(age_plotly, align = "center")
 ```
-
+<br>
 12 year old scotch, and to a lesser extent whiskies aged 10, 15, 18, and 21 years, are very common across the industry. The apparent reasons why these ages occur most often? Marketing and tradition. It's been suggested that, when single malt scotch started to become more popular in the past half century, major producers and distillers poised to enter the market established a baseline of 12, 15, and 18 year whiskies dictated by their abundant supply at the time. 
 
 Since then, ages in these increments have become increasingly customary across the industry, perhaps because they are the optimal age for whiskies, but more likely because consumers over the years have come to associate "quality scotch" with scotch aged at least 12 years, which sells better depending on the market. Many consumers also lust after extremely old whiskies because they believe that "old" = "rare" = "expensive" = "exquisite." Special releases and collector's items account for the bumps at 25 and 30 years, followed by 35, 40, and 50 years. 
@@ -260,4 +260,4 @@ Some of the major takeaways from this analysis:
 [Code for Part 2](https://github.com/bengreenwald/whisky/blob/main/analysis/scotch-analysis-part2.R) available on Github.
 
 # Next Steps
-We've compared variables such as `age`, `ABV`, `price`, and `points` and learned about whisky `type` from scotch sourced all across Scotland. Next, Part 3 will focus on the regionality of scotch to better understand the distribution and clustering of distilleries across different regions of Scotland -- and what makes each region's whisky so special and unique.
+We've compared variables such as `age`, `ABV`, `price`, and `points` and learned about whisky `type` from scotch sourced all across Scotland. Next, [Part 3](https://bengreenwald.io/project/exploring-whisky-scotch-part3/) focuses on the regionality of scotch to better understand the distribution and clustering of distilleries across different regions of Scotland -- and what makes each region's whisky so special and unique.
