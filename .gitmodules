@@ -1,3 +1,9 @@
 [submodule "content/project/exploring-whisky-scotch-part1/external/whisky"]
 	path = content/project/exploring-whisky-scotch-part1/external/whisky
 	url = https://github.com/bengreenwald/whisky.git
+[submodule "content/project/exploring-whisky-scotch-part2/external/whisky"]
+	path = content/project/exploring-whisky-scotch-part2/external/whisky
+	url = https://github.com/bengreenwald/whisky.git
+[submodule "content/project/exploring-whisky-scotch-part3/external/whisky"]
+	path = content/project/exploring-whisky-scotch-part3/external/whisky
+	url = https://github.com/bengreenwald/whisky.git
