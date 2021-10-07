@@ -21,9 +21,9 @@ interests:
 - Sports analytics
 - Social impact
 organizations:
-- name: Catalyst @ Penn GSE
-  url: https://www.gse.upenn.edu/catalyst
-role: Coordinator
+- name: CompassRed
+  url: https://www.compassred.com/
+role: Senior Data Analyst
 social:
 - icon: envelope
   icon_pack: fas
@@ -38,6 +38,6 @@ superuser: true
 title: Ben Greenwald
 ---
 
-I am passionate about designing data-driven stories to create insights and foster social impact. I love to explore, analyze, and visualize data to inspire positive change and a curiosity to learn. Currently, I work for Catalyst @ Penn GSE, a center for global innovation at the University of Pennsylvania where I evaluate and coordinate programs for leaders who are shaping the future of education and learning.
+I am a data analyst specializing in data visualization and storytelling. I love to explore, design, and share data-driven stories that inspire positive change and a curiosity to learn. Currently, I work at CompassRed, where I build custom dashboards and analytics reporting tools to deliver insights to businesses and their communities. 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/ben-greenwald-resume.pdf" "newtab" >}}résumé{{< /staticref >}}.
