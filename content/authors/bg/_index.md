@@ -16,10 +16,8 @@ highlight_name: true
 interests:
 - Data analysis
 - Data visualization
-- UI & UX design
-- Machine learning
+- UX design
 - Sports analytics
-- Social impact
 organizations:
 - name: CompassRed
   url: https://www.compassred.com/
