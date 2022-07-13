@@ -5,13 +5,13 @@ name = "bg"
 light = false
 
 # Primary
-primary = "#71bc78"
+primary = "#59A068"
 
 # Menu
 menu_primary = "#222222"
-menu_text = "#d9d9d9"
-menu_text_active = "#71bc78"
-menu_title = "#d9d9d9"
+menu_text = "#D3D3D3"
+menu_text_active = "#59A068"
+menu_title = "#D3D3D3"
 
 # Home sections
 background = "#222222"

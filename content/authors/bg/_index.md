@@ -11,13 +11,18 @@ education:
   - course: BA • Math-Econ, Film & Media Studies
     institution: Lafayette College
     year: 2012
+  - course: Certificate • Foundations of Humane Technology
+    institution: Center for Humane Technology
+    year: 2022
 email: ""
 highlight_name: true
 interests:
 - Data analysis
 - Data visualization
+- Data storytelling
 - UX design
 - Sports analytics
+- Digital accessibility
 organizations:
 - name: CompassRed
   url: https://www.compassred.com/
@@ -36,6 +41,6 @@ superuser: true
 title: Ben Greenwald
 ---
 
-I am a data analyst specializing in data visualization and storytelling. I love to explore, design, and share data-driven stories that inspire positive change and a curiosity to learn. Currently, I work at CompassRed, where I build custom dashboards and analytics reporting tools to deliver insights to businesses and their communities. 
+I am a design-driven data analyst skilled in visualization and storytelling. As a Senior Data Analyst at CompassRed, I manage projects, build custom tools, and design data products that drive impact for businesses and the communities they serve. Stemming from my years spent developing and producing film and TV content, I love to leverage analytics and human-centered design to tell compelling stories through data. My favorite projects are ones through which I can synthesize my technical, creative, and communication skills to tackle complex problems, and I believe that the most effective solutions are rooted in research, empathy, and a persistent curiosity to learn. 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/ben-greenwald-resume.pdf" "newtab" >}}résumé{{< /staticref >}}.

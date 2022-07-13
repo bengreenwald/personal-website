@@ -2,11 +2,11 @@
 name = "bg"
 
 # Optional Google font URL
-google_fonts = "Fira+Code|Roboto:400,400i,700,700i|Spectral:400,400i,700,700i"
+google_fonts = "family=Fira+Code:wght@400;700&family=Karla:ital,wght@0,400;0,700;1,400;1,700&family=Spectral:ital,wght@0,400;0,700;1,400;1,700"
 
 # Font families
 heading_font = "Spectral"
-body_font = "Roboto"
-nav_font = "Roboto"
+body_font = "Karla"
+nav_font = "Karla"
 mono_font = "Fira Code"
 

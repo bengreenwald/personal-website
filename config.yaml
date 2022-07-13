@@ -6,7 +6,7 @@ theme: "starter-academic"
 
 title: Ben Greenwald # Website name
 baseurl: "https://bengreenwald.io/" # Website URL
-copyright: '© 2021 Ben Greenwald.' # Footer text, e.g. '© {year} Me'
+copyright: '© 2022 Ben Greenwald.' # Footer text, e.g. '© {year} Me'
 
 ############################
 ## LANGUAGE

@@ -1,0 +1,20 @@
+---
+title: "Public Garden Mailchimp Dashboard"
+subtitle: "Developed for a client in collaboration with Alessi Communication & Design."
+summary: I analyzed and visualized email marketing and customer engagement data to guide communication strategies.
+date: "2022-01-30"
+tags: [analysis, design, r]
+image:
+  caption: "[Photo by Jan Canty on Unsplash](https://unsplash.com/@jancanty)"
+  focal_point: center
+draft: false
+output: html_document
+---
+
+Earlier this winter, I teamed up with [Alessi Communication & Design](https://www.alessicommunication.com/) to explore Mailchimp data for a client (a public garden). We were tasked with helping the client to understand their marketing performance and communication behaviors in order to best guide future strategies regarding how to best reach and engge with their communities. 
+
+This project provided a great opportunity to get comfortable scraping data with Python; the most efficient method to capture tens of thousands of records of email marketing and customer engagement data was through Mailchimp's API. 
+
+With the raw data in hand, I cleaned the data and conducted an exploratory data analysis in R. Lastly, I designed an interactive dashboard to visualize my findings using Google Data Studio with custom stylings and formatting to match the client's branding. 
+
+[Explore an anonymized version of the dashboard here](https://datastudio.google.com/s/kRyzHNDloFo).
