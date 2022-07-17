@@ -33,7 +33,7 @@ social:
   link: mailto:greenwab11@gmail.com
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/bengreenwald
+  link: https://www.linkedin.com/in/bengreenwald/
 - icon: github
   icon_pack: fab
   link: https://github.com/bengreenwald
