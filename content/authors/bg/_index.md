@@ -41,8 +41,6 @@ superuser: true
 title: Ben Greenwald
 ---
 
-I am a design-driven data analyst skilled in visualization and storytelling. As a Senior Data Analyst at CompassRed, I manage projects, build custom tools, and design data products that drive meaningful impact for businesses and the communities they serve. Stemming from my years spent developing and producing film and TV content, I love to leverage analytics, empathy, and human-centered design to tell compelling stories through data. 
-
-I currently live in Philadelphia with my wife and dog. Ask me about data, soccer, or scotch! 
+I am a design-driven data analyst skilled in visualization and storytelling. As a Senior Data Analyst at CompassRed, I manage projects, build custom tools, and design data products that drive meaningful impact for businesses and the communities they serve. Stemming from my years spent developing and producing film and TV content, I love to leverage analytics, empathy, and human-centered design to tell compelling stories through data. I currently live in Philadelphia with my wife and dog. Ask me about data, soccer, or scotch! 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/ben-greenwald-resume.pdf" "newtab" >}}résumé{{< /staticref >}}.
